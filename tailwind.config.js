@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        noto: ["Noto Sans", "sans-serif"],
-        jakarta: ["Plus Jakarta Sans", "sans-serif"],
+        poppins: ["Work Sans", "sans-serif"],
       },
     },
   },
