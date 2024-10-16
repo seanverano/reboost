@@ -1,4 +1,4 @@
-import DrinkPage from "./components/DrinkPage";
+import DrinkPage from "./pages/DrinkPage";
 
 function App() {
   return (
