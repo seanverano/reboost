@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { SiRainmeter } from "react-icons/si";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { IoMdAddCircle } from "react-icons/io";
-import Modal from "../Modal";
+import DrinkModal from "./DrinkModal";
+import DrinkModalButton from "./DrinkModalButton";
 
 const DrinkVolume = () => {
   const [showModal, setShowModal] = useState(false);
@@ -39,7 +38,7 @@ const DrinkVolume = () => {
         <FaBars /> How much have you drank?
       </h1>
 
-      <Modal show={showModal} onClose={closeModal}>
+      <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-poppins font-medium bg-[#EEF8FB] rounded-lg">
           {volumes.map((volume, index) => (
             <div
@@ -54,26 +53,16 @@ const DrinkVolume = () => {
             type="number"
             value={newVolume}
             onChange={(e) => setNewVolume(e.target.value)}
-            placeholder="Your thirst, your volume!"
+            placeholder="Enter volume (in ml)"
             className="italic text-xs text-center mt-4 mb-3 p-2 border border-gray-300 rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#55BCD8]"
             min="0"
           />
-          <div className="flex flex-row space-x-3">
-            <button
-              onClick={handleAddVolume}
-              className="text-base bg-[#55BCD8] text-white px-4 py-2 rounded-lg hover:bg-[#4DA3B5]"
-            >
-              <IoMdAddCircle />
-            </button>
-            <button
-              onClick={handleDeleteVolume}
-              className="text-sm bg-[#55BCD8] text-white px-4 py-2 rounded-lg hover:bg-[#4DA3B5]"
-            >
-              <RiDeleteBin6Line />
-            </button>
-          </div>
+          <DrinkModalButton
+            handleAdd={handleAddVolume}
+            handleDelete={handleDeleteVolume}
+          />
         </div>
-      </Modal>
+      </DrinkModal>
     </>
   );
 };

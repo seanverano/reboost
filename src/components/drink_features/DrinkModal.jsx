@@ -1,6 +1,6 @@
 import { IoClose } from "react-icons/io5";
 
-const Modal = ({ show, onClose, children }) => {
+const DrinkModal = ({ show, onClose, children }) => {
   if (!show) return null;
 
   return (
@@ -18,4 +18,4 @@ const Modal = ({ show, onClose, children }) => {
   );
 };
 
-export default Modal;
+export default DrinkModal;
