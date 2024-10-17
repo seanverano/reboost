@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 import { SiRainmeter } from "react-icons/si";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
@@ -34,9 +34,20 @@ const DrinkVolume = () => {
 
   return (
     <>
-      <h1 onClick={openModal} className="cursor-pointer text-[#000000]">
-        <FaBars /> How much have you drank?
-      </h1>
+      <div
+        onClick={openModal}
+        className="flex flex-row justify-between items-center w-full bg-[#000000] border border-none rounded-lg py-3 px-6 cursor-pointer transition-transform duration-200 active:translate-y-1"
+      >
+        <div className="flex flex-col items-start">
+          <h1 className="font-bold text-base text-[#ffffff] text-left">
+            Volume
+          </h1>
+          <h3 className="font-normal text-xs text-[#f0f0f0] text-left">
+            Set Quantity
+          </h3>
+        </div>
+        <IoIosArrowDown className="text-[#ffffff]" />
+      </div>
 
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-poppins font-medium bg-[#EEF8FB] rounded-lg">
@@ -54,7 +65,7 @@ const DrinkVolume = () => {
             value={newVolume}
             onChange={(e) => setNewVolume(e.target.value)}
             placeholder="Enter volume (in ml)"
-            className="italic text-xs text-center mt-4 mb-3 p-2 border border-gray-300 rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#55BCD8]"
+            className="italic text-[#F0F0F0] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#55BCD8]"
             min="0"
           />
           <DrinkModalButton
