@@ -1,3 +1,5 @@
+import { GiCoffeeCup } from "react-icons/gi";
+
 const Modal = ({ show, onClose, children }) => {
   if (!show) return null;
 
