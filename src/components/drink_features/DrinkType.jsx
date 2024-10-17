@@ -25,21 +25,21 @@ const DrinkType = () => {
       </h1>
 
       <Modal show={showModal} onClose={closeModal}>
-        <div className="flex flex-col justify-center items-center">
-          <div className="mb-2 text-[#ffffff]">
-            <LuGlassWater /> Plain Water
+        <div className="flex flex-col justify-center py-4 items-center font-poppins font-semibold bg-[#EEF8FB] rounded-lg">
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <LuGlassWater className="mr-2" /> Water
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <CiCoffeeCup /> Coffee
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <CiCoffeeCup className="mr-2" /> Coffee
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <MdOutlineEmojiFoodBeverage /> Tea
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <LuCupSoda className="mr-2" /> Juice
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <LuCupSoda /> Juice
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <GiSodaCan className="mr-2" /> Soda
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <GiSodaCan /> Soft Drink
+          <div className="text-base flex flex-row items-center justify-center px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <MdOutlineEmojiFoodBeverage className="mr-2" /> Tea
           </div>
         </div>
       </Modal>

@@ -1,13 +1,16 @@
-import { GiCoffeeCup } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 
 const Modal = ({ show, onClose, children }) => {
   if (!show) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-[#000000] rounded-lg p-6">
-        <button className="text-right text-gray-600" onClick={onClose}>
-          X
+      <div className="bg-transparent rounded-lg p-6 w-[250px] relative">
+        <button
+          className="absolute top-2 right-4 w-12 h-12 bg-[#000000] rounded-full flex justify-center items-center"
+          onClick={onClose}
+        >
+          <IoClose className="text-[#ffffff] text-lg" />
         </button>
         {children}
       </div>

@@ -21,25 +21,25 @@ const DrinkVolume = () => {
       </h1>
 
       <Modal show={showModal} onClose={closeModal}>
-        <div className="flex flex-col justify-center items-center">
-          <div className="mb-2 text-[#ffffff]">
-            <IoWaterOutline />
+        <div className="flex flex-col justify-center py-4 items-center font-poppins font-semibold bg-[#EEF8FB] rounded-lg">
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <IoWaterOutline className="mr-2" />
             200 ml
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <IoWaterOutline />
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <IoWaterOutline className="mr-2" />
             300 ml
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <IoWaterOutline />
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <IoWaterOutline className="mr-2" />
             400 ml
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <IoWaterOutline />
+          <div className="text-base flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <IoWaterOutline className="mr-2" />
             500 ml
           </div>
-          <div className="mb-2 text-[#ffffff]">
-            <IoWaterOutline />
+          <div className="text-base flex flex-row items-center justify-center px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]">
+            <IoWaterOutline className="mr-2" />
             1000 ml
           </div>
         </div>

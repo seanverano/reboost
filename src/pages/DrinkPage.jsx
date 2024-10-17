@@ -29,7 +29,7 @@ const DrinkPage = () => {
               }
             }}
           >
-            <FaPlus className="text-[#ffffff]" />
+            <FaPlus className="text-[#000000]" />
           </button>
         </div>
       </div>
