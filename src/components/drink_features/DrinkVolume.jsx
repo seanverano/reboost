@@ -33,14 +33,14 @@ const DrinkVolume = () => {
 
   return (
     <>
-      <div className="flex items-center gap-4 px-4 h-14 w-full">
+      <div className="flex items-center gap-4 px-4 h-10 w-full">
         <div
           onClick={openModal}
-          className="text-[#000000] text-base flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:translate-y-1"
+          className="text-[#000000] text-sm flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:scale-90"
         >
           <SiRainmeter />
         </div>
-        <p className="text-[#000000] text-base font-normal leading-normal">
+        <p className="text-[#000000] text-sm font-normal leading-normal">
           Set Volume
         </p>
       </div>
@@ -61,7 +61,7 @@ const DrinkVolume = () => {
             value={newVolume}
             onChange={(e) => setNewVolume(e.target.value)}
             placeholder="Enter new volume (in ml)"
-            className="italic text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
+            className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
             min="0"
           />
           <DrinkModalButton

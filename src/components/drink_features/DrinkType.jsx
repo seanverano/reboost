@@ -38,14 +38,14 @@ const DrinkType = () => {
 
   return (
     <>
-      <div className="flex items-center gap-4 px-4 h-14 w-full">
+      <div className="flex items-center gap-4 px-4 h-10 w-full">
         <div
           onClick={openModal}
-          className="text-[#000000] text-base flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:translate-y-1"
+          className="text-[#000000] text-sm flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:scale-90"
         >
           <BsCup />
         </div>
-        <p className="text-[#000000] text-base font-normal leading-normal">
+        <p className="text-[#000000] text-sm font-normal leading-normal">
           Beverage List
         </p>
       </div>
@@ -64,7 +64,7 @@ const DrinkType = () => {
             value={newDrink}
             onChange={(e) => setNewDrink(e.target.value)}
             placeholder="Enter new beverage"
-            className="italic text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
+            className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
           />
           <DrinkModalButton
             handleAdd={handleAddDrink}

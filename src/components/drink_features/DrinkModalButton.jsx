@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMdAdd } from "react-icons/io";
+import { FaPlus } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 const DrinkModalButton = ({ handleAdd, handleDelete }) => {
@@ -7,13 +7,13 @@ const DrinkModalButton = ({ handleAdd, handleDelete }) => {
     <div className="flex flex-row space-x-3">
       <button
         onClick={handleAdd}
-        className="text-base text-center bg-[#1CABE3] text-[#F9FBFA] px-4 py-2 rounded-lg hover:bg-[#4DA3B5]"
+        className="text-base text-center bg-[#1CABE3] text-[#F8FBFB] px-4 py-2 rounded-lg hover:bg-[#4DA3B5]"
       >
-        <IoMdAdd />
+        <FaPlus />
       </button>
       <button
         onClick={handleDelete}
-        className="text-base text-center  bg-[#1CABE3] text-[#F9FBFA] px-4 py-2 rounded-lg hover:bg-[#4DA3B5]"
+        className="text-base text-center bg-[#1CABE3] text-[#F8FBFB] px-4 py-2 rounded-lg hover:bg-[#4DA3B5]"
       >
         <RiDeleteBin6Line />
       </button>
