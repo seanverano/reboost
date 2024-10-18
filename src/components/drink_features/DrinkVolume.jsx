@@ -50,7 +50,7 @@ const DrinkVolume = () => {
       </div>
 
       <DrinkModal show={showModal} onClose={closeModal}>
-        <div className="flex flex-col justify-center py-4 items-center font-poppins font-medium bg-[#EEF8FB] rounded-lg">
+        <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
           {volumes.map((volume, index) => (
             <div
               key={index}

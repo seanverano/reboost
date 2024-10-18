@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Work Sans", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
       },
     },
   },

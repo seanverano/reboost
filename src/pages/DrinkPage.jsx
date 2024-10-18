@@ -6,7 +6,7 @@ import DrinkType from "../components/drink_features/DrinkType";
 const DrinkPage = () => {
   return (
     <>
-      <div className="font-poppins flex flex-col h-full w-[300px] h-[500px]">
+      <div className="font-manrope flex flex-col h-full w-[300px] h-[500px]">
         <h1 className="text-center font-bold text-lg">Stay Hydrated!</h1>
         <div className="flex px-4 py-6 justify-center items-center">
           <div className="flex flex-1 flex-col gap-2 rounded-full border border-transparent p-6 bg-[#EEF8FB]">
