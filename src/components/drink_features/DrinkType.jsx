@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsCup } from "react-icons/bs";
+import { IoIosArrowDown } from "react-icons/io";
 import { CiCoffeeCup } from "react-icons/ci";
 import { LuCupSoda } from "react-icons/lu";
 import { LuGlassWater } from "react-icons/lu";
@@ -43,7 +43,7 @@ const DrinkType = () => {
           onClick={openModal}
           className="text-[#000000] text-sm flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:scale-90"
         >
-          <BsCup />
+          <IoIosArrowDown />
         </div>
         <p className="text-[#000000] text-sm font-normal leading-normal">
           Beverage List
