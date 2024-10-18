@@ -41,18 +41,20 @@ const DrinkType = () => {
       <div className="flex items-center gap-4 px-4 h-14 w-full">
         <div
           onClick={openModal}
-          className="text-[#000000] flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:translate-y-1"
+          className="text-[#000000] text-base flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:translate-y-1"
         >
           <BsCup />
         </div>
-        <p className="text-[#000000] text-base font-normal">Beverage List</p>
+        <p className="text-[#000000] text-base font-normal leading-normal">
+          Beverage List
+        </p>
       </div>
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
           {drinks.map((drink, index) => (
             <div
               key={index}
-              className="text-sm flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#55BCD8] hover:bg-[#CFECF4]"
+              className="text-sm flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4]"
             >
               <span className="mr-2">{drink.icon}</span> {drink.name}
             </div>
@@ -62,7 +64,7 @@ const DrinkType = () => {
             value={newDrink}
             onChange={(e) => setNewDrink(e.target.value)}
             placeholder="Enter new beverage"
-            className="italic text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#55BCD8]"
+            className="italic text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
           />
           <DrinkModalButton
             handleAdd={handleAddDrink}

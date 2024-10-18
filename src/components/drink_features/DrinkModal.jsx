@@ -10,7 +10,7 @@ const DrinkModal = ({ show, onClose, children }) => {
           className="absolute top-2 right-4 w-12 h-12 bg-[#000000] rounded-full flex justify-center items-center"
           onClick={onClose}
         >
-          <IoClose className="text-[#ffffff] text-lg" />
+          <IoClose className="text-[#F9FBFA] text-lg" />
         </button>
         {children}
       </div>
