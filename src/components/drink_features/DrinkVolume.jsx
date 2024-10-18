@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import { SiRainmeter } from "react-icons/si";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
@@ -34,19 +33,14 @@ const DrinkVolume = () => {
 
   return (
     <>
-      <div
-        onClick={openModal}
-        className="flex flex-row justify-between items-center w-full bg-[#000000] border border-none rounded-lg py-3 px-6 cursor-pointer transition-transform duration-200 active:translate-y-1"
-      >
-        <div className="flex flex-col items-start">
-          <h1 className="font-bold text-base text-[#ffffff] text-left">
-            Volume
-          </h1>
-          <h3 className="font-normal text-xs text-[#f0f0f0] text-left">
-            Set Quantity
-          </h3>
+      <div className="flex items-center gap-4 px-4 h-14 w-full">
+        <div
+          onClick={openModal}
+          className="text-[#000000] flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:translate-y-1"
+        >
+          <SiRainmeter />
         </div>
-        <IoIosArrowDown className="text-[#ffffff]" />
+        <p className="text-[#000000] text-base font-normal">Set Volume</p>
       </div>
 
       <DrinkModal show={showModal} onClose={closeModal}>

@@ -38,14 +38,14 @@ const DrinkType = () => {
 
   return (
     <>
-      <div class="flex items-center gap-4 bg-[#f8fbfb] px-4 min-h-14">
+      <div className="flex items-center gap-4 px-4 h-14 w-full">
         <div
           onClick={openModal}
-          class="text-[#000000] flex items-center justify-center rounded-lg bg-[#e8f0f3] shrink-0 size-10 cursor-pointer transition-transform duration-200 active:translate-y-1"
+          className="text-[#000000] flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:translate-y-1"
         >
           <BsCup />
         </div>
-        <p class="text-[#000000] text-base font-normal flex-1">Beverage List</p>
+        <p className="text-[#000000] text-base font-normal">Beverage List</p>
       </div>
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
