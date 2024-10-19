@@ -3,6 +3,7 @@ import { GoGear } from "react-icons/go";
 import { AiOutlineHome } from "react-icons/ai";
 import DrinkVolume from "../components/drink_features/DrinkVolume";
 import DrinkType from "../components/drink_features/DrinkType";
+import DrinkLogs from "../components/drink_features/DrinkLogs";
 import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
@@ -10,6 +11,7 @@ const DrinkPage = () => {
   const [totalVolume, setTotalVolume] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
+  const [drinkLogs, setDrinkLogs] = useState([]);
   const dailyGoal = 2000;
 
   const handleLogDrink = () => {
@@ -74,6 +76,17 @@ const DrinkPage = () => {
     };
   }, []);
 
+  const addToLogs = (drink, volume) => {
+    setDrinkLogs([
+      ...drinkLogs,
+      {
+        drink: drink,
+        volume: volume,
+        timestamp: new Date(),
+      },
+    ]);
+  };
+
   return (
     <>
       <div className="font-manrope flex flex-col h-[500px] w-[300px] bg-[#F8FBFB] rounded-lg overflow-hidden">
@@ -92,7 +105,7 @@ const DrinkPage = () => {
           </div>
         </div>
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
-          Progress Today
+          Today's Progress
         </h1>
         <div className="flex flex-wrap gap-4 px-10 py-6">
           <div
@@ -182,11 +195,7 @@ const DrinkPage = () => {
               Log Drink
             </p>
           </button>
-          <button className="m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center bg-[#000000] cursor-pointer transition-transform duration-200 active:translate-y-1">
-            <p className="text-[#E7F0F2] text-xs font-bold leading-normal tracking-[0.015em]">
-              Add Reminder
-            </p>
-          </button>
+          <DrinkLogs drinkLogs={drinkLogs} />
         </div>
       </div>
     </>

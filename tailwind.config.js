@@ -4,7 +4,7 @@ export default {
     extend: {
       animation: {
         "progress-wave": "progress-wave 2s ease-in-out infinite",
-        pulsate: "pulsate 1s ease-in-out forwards",
+        pulsate: "pulsate 0.5s ease-in-out forwards",
       },
       fontFamily: {
         manrope: ["Manrope", "sans-serif"],
