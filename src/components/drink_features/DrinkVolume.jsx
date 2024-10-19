@@ -4,10 +4,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
 
-const DrinkVolume = () => {
+const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
   const [showModal, setShowModal] = useState(false);
   const [newVolume, setNewVolume] = useState("");
-  const [selectedVolume, setSelectedVolume] = useState(null);
   const [volumes, setVolumes] = useState([
     { name: "200", icon: <SiRainmeter /> },
     { name: "300", icon: <SiRainmeter /> },
