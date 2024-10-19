@@ -7,6 +7,7 @@ import DrinkModalButton from "./DrinkModalButton";
 const DrinkVolume = () => {
   const [showModal, setShowModal] = useState(false);
   const [newVolume, setNewVolume] = useState("");
+  const [selectedVolume, setSelectedVolume] = useState(null);
   const [volumes, setVolumes] = useState([
     { name: "200", icon: <SiRainmeter /> },
     { name: "300", icon: <SiRainmeter /> },
@@ -25,11 +26,16 @@ const DrinkVolume = () => {
       setNewVolume("");
     }
   };
+
   const handleDeleteVolume = () => {
     if (volumes.length > 0) {
       const updatedVolumes = volumes.slice(0, volumes.length - 1);
       setVolumes(updatedVolumes);
     }
+  };
+
+  const handleSelectVolume = (volume) => {
+    setSelectedVolume(volume);
   };
 
   return (
@@ -48,11 +54,26 @@ const DrinkVolume = () => {
 
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
-          <h1 className="text-sm font-bold my-2 leading-normal">Selected: </h1>
+          <div className="px-4 flex flex-row items-center justify-center my-3">
+            <h1 className="text-[#000000] ml-2 mr-1 text-xs font-bold leading-normal">
+              Selected:
+            </h1>
+            {selectedVolume ? (
+              <div className="flex items-center text-[#1CABE3] text-xs text-normal">
+                {selectedVolume.icon}
+                <span className="ml-1">{selectedVolume.name} ml</span>
+              </div>
+            ) : (
+              <span className="flex items-center text-[#1CABE3] text-xs text-normal">
+                None
+              </span>
+            )}
+          </div>
           {volumes.map((volume, index) => (
             <div
               key={index}
-              className="text-sm flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4]"
+              onClick={() => handleSelectVolume(volume)}
+              className="text-sm flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4] cursor-pointer"
             >
               <span className="mr-2">{volume.icon}</span>{" "}
               <span>{volume.name} ml</span>

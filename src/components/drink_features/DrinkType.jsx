@@ -5,7 +5,7 @@ import { LuCupSoda } from "react-icons/lu";
 import { LuGlassWater } from "react-icons/lu";
 import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
 import { GiSodaCan } from "react-icons/gi";
-import { BsCup } from "react-icons/bs";
+import { BsCupStraw } from "react-icons/bs";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
 
@@ -26,7 +26,7 @@ const DrinkType = () => {
 
   const handleAddDrink = () => {
     if (newDrink) {
-      const addedDrink = { name: newDrink, icon: <BsCup /> };
+      const addedDrink = { name: newDrink, icon: <BsCupStraw /> };
       setDrinks([...drinks, addedDrink]);
       setNewDrink("");
     }
@@ -38,7 +38,7 @@ const DrinkType = () => {
     }
   };
 
-  const handleDrinkClick = (drink) => {
+  const handleSelectDrink = (drink) => {
     setSelectedDrink(drink);
   };
 
@@ -75,7 +75,7 @@ const DrinkType = () => {
           {drinks.map((drink, index) => (
             <div
               key={index}
-              onClick={() => handleDrinkClick(drink)}
+              onClick={() => handleSelectDrink(drink)}
               className="text-sm text-normal flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4] cursor-pointer"
             >
               <span className="mr-2">{drink.icon}</span> {drink.name}
