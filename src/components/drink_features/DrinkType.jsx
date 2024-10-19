@@ -5,12 +5,14 @@ import { LuCupSoda } from "react-icons/lu";
 import { LuGlassWater } from "react-icons/lu";
 import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
 import { GiSodaCan } from "react-icons/gi";
+import { BsCup } from "react-icons/bs";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
 
 const DrinkType = () => {
   const [showModal, setShowModal] = useState(false);
   const [newDrink, setNewDrink] = useState("");
+  const [selectedDrink, setSelectedDrink] = useState(null);
   const [drinks, setDrinks] = useState([
     { name: "Water", icon: <LuGlassWater /> },
     { name: "Coffee", icon: <CiCoffeeCup /> },
@@ -36,6 +38,10 @@ const DrinkType = () => {
     }
   };
 
+  const handleDrinkClick = (drink) => {
+    setSelectedDrink(drink);
+  };
+
   return (
     <>
       <div className="flex items-center gap-4 px-4 h-10 w-full">
@@ -51,10 +57,26 @@ const DrinkType = () => {
       </div>
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
+          <div className="px-4 flex flex-row items-center justify-center my-3">
+            <h1 className="text-[#000000] ml-2 mr-1 text-xs font-bold leading-normal">
+              Selected:
+            </h1>
+            {selectedDrink ? (
+              <div className="flex items-center text-[#1CABE3] text-xs text-normal">
+                {selectedDrink.icon}
+                <span className="ml-1">{selectedDrink.name}</span>
+              </div>
+            ) : (
+              <span className="flex items-center text-[#1CABE3] text-xs text-normal">
+                None
+              </span>
+            )}
+          </div>
           {drinks.map((drink, index) => (
             <div
               key={index}
-              className="text-sm flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4]"
+              onClick={() => handleDrinkClick(drink)}
+              className="text-sm text-normal flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4] cursor-pointer"
             >
               <span className="mr-2">{drink.icon}</span> {drink.name}
             </div>

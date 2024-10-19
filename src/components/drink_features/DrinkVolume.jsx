@@ -48,10 +48,11 @@ const DrinkVolume = () => {
 
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
+          <h1 className="text-sm font-bold my-2 leading-normal">Selected: </h1>
           {volumes.map((volume, index) => (
             <div
               key={index}
-              className="text-sm flex flex-row items-center justify-center mb-2 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4]"
+              className="text-sm flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4]"
             >
               <span className="mr-2">{volume.icon}</span>{" "}
               <span>{volume.name} ml</span>
