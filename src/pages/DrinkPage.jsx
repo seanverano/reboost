@@ -1,28 +1,82 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GoGear } from "react-icons/go";
 import { AiOutlineHome } from "react-icons/ai";
 import DrinkVolume from "../components/drink_features/DrinkVolume";
 import DrinkType from "../components/drink_features/DrinkType";
+import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
   const [selectedVolume, setSelectedVolume] = useState(null);
   const [totalVolume, setTotalVolume] = useState(0);
-  const dailyGoal = 2000; // 2L in ml
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [showCelebration, setShowCelebration] = useState(false);
+  const dailyGoal = 2000;
 
   const handleLogDrink = () => {
     if (selectedVolume) {
       const newTotal = totalVolume + parseInt(selectedVolume.name);
       setTotalVolume(newTotal);
+      setIsAnimating(true);
+
+      if (newTotal >= dailyGoal && totalVolume < dailyGoal) {
+        setShowCelebration(true);
+        triggerCelebration();
+      }
+
+      setTimeout(() => {
+        setIsAnimating(false);
+        if (showCelebration) {
+          setShowCelebration(false);
+        }
+      }, 1500);
     }
   };
 
-  const calculateProgress = () => {
-    return ((totalVolume / dailyGoal) * 100).toFixed(1);
+  const triggerCelebration = () => {
+    const duration = 3 * 1000;
+    const end = Date.now() + duration;
+
+    const colors = ["#1CABE3", "#EEF8FB", "#CFECF4"];
+
+    (function frame() {
+      confetti({
+        particleCount: 2,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors,
+        disableForReducedMotion: true,
+      });
+      confetti({
+        particleCount: 2,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors,
+        disableForReducedMotion: true,
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
   };
+
+  const calculateProgress = () => {
+    return Math.min((totalVolume / dailyGoal) * 100, 100).toFixed(1);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (typeof confetti.reset === "function") {
+        confetti.reset();
+      }
+    };
+  }, []);
 
   return (
     <>
-      <div className="font-manrope flex flex-col h-full w-[300px] h-[500px] bg-[#F8FBFB] rounded-lg">
+      <div className="font-manrope flex flex-col h-[500px] w-[300px] bg-[#F8FBFB] rounded-lg overflow-hidden">
         <div className="flex items-center bg-[#f8fbfb] mt-3 p-1 pb-2 justify-between">
           <button className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0">
             <div className="flex items-center gap-2 text-[#000000] ml-3 hover:text-[#1CABE3] text-lg">
@@ -40,22 +94,39 @@ const DrinkPage = () => {
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
           Progress Today
         </h1>
-        <div className="flex flex-wrap gap-4 px-4 py-6">
-          <div className="flex flex-1 flex-col gap-2 rounded-xl border border-[#d0e0e6] bg-[#F8FBFB] bg-opacity-20 backdrop-blur-lg shadow-lg p-6">
-            <p className="text-[#000000] tracking-light text-4xl font-black leading-tight truncate">
-              {calculateProgress()}%
-            </p>
-            <p className="text-[#4f8296] text-sm font-normal leading-normal">
-              {totalVolume >= dailyGoal ? "Goal Reached!" : "Drink Up!"}
-            </p>
-            <div className="grid grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3">
-              <div className="border-[#4f8296] bg-[#e8f0f3] border-t-2 w-full"></div>
-              <p className="text-[#4f8296] text-[13px] font-bold leading-normal tracking-[0.015em]">
+        <div className="flex flex-wrap gap-4 px-10 py-6">
+          <div
+            className={`flex flex-1 flex-col gap-2 rounded-xl border border-[#d0e0e6] bg-[#F8FBFB] backdrop-blur-lg shadow-lg p-6 relative overflow-hidden ${
+              isAnimating ? "animate-pulsate" : ""
+            }`}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-full bg-[#CFECF4] transition-all duration-1000 ease-out 
+                ${isAnimating ? "animate-progress-wave" : ""}`}
+              style={{
+                height: `${calculateProgress()}%`,
+                zIndex: 0,
+              }}
+            />
+
+            <div className="relative z-10">
+              <p className="mb-2 text-[#000000] tracking-light text-4xl font-black leading-tight truncate">
+                {calculateProgress()}%
+              </p>
+              <p className="text-[#4f8296] text-sm font-normal leading-normal">
+                {totalVolume >= dailyGoal
+                  ? "Goal Reached! 🎉"
+                  : totalVolume >= dailyGoal / 2
+                  ? "Keep it Up! 💪"
+                  : "Drink Up! 💧"}
+              </p>
+              <p className="text-[#4f8296] text-[13px] font-bold leading-normal tracking-[0.015em] mt-4">
                 {(totalVolume / 1000).toFixed(1)} of 2L
               </p>
             </div>
           </div>
         </div>
+
         <h1 className="text-center font-bold text-[lg] leading-tight tracking-[-0.015em] px-4 mb-5">
           Your Drink, Your Choice
         </h1>
@@ -71,7 +142,12 @@ const DrinkPage = () => {
         <div className="flex flex-row space-x-5 justify-center">
           <button
             onClick={handleLogDrink}
-            className="m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center bg-[#1CABE3] cursor-pointer transition-transform duration-200 active:translate-y-1"
+            disabled={!selectedVolume}
+            className={`m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center ${
+              selectedVolume
+                ? "bg-[#1CABE3] cursor-pointer"
+                : "bg-[#1CABE3]/50 cursor-not-allowed"
+            } transition-transform duration-200 active:translate-y-1`}
           >
             <p className="text-[#F9FBFA] text-xs font-bold leading-normal tracking-[0.015em]">
               Log Drink
@@ -82,6 +158,11 @@ const DrinkPage = () => {
               Add Reminder
             </p>
           </button>
+          {showCelebration && (
+            <div className="fixed inset-0 pointer-events-none z-50">
+              <div className="absolute inset-0 flex items-center justify-center"></div>
+            </div>
+          )}
         </div>
       </div>
     </>
