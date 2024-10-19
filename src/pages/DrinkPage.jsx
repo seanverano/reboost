@@ -43,7 +43,7 @@ const DrinkPage = () => {
         particleCount: 2,
         angle: 60,
         spread: 55,
-        origin: { x: 0 },
+        origin: { x: 0.5 },
         colors: colors,
         disableForReducedMotion: true,
       });
@@ -51,7 +51,7 @@ const DrinkPage = () => {
         particleCount: 2,
         angle: 120,
         spread: 55,
-        origin: { x: 1 },
+        origin: { x: 0.5 },
         colors: colors,
         disableForReducedMotion: true,
       });
@@ -114,7 +114,7 @@ const DrinkPage = () => {
                 className={`mb-2 tracking-light text-4xl font-black leading-tight truncate ${
                   calculateProgress() >= 100
                     ? "text-[#F8FBFB]"
-                    : calculateProgress() >= 70
+                    : calculateProgress() >= 80
                     ? "text-[#F8FBFB]"
                     : "text-[#000000]"
                 }`}
@@ -149,6 +149,11 @@ const DrinkPage = () => {
               </p>
             </div>
           </div>
+          {showCelebration && (
+            <div className="absolute inset-0 pointer-events-none z-50 flex items-center justify-center">
+              <div className="flex items-center justify-center"></div>
+            </div>
+          )}
         </div>
 
         <h1 className="text-center font-bold text-[lg] leading-tight tracking-[-0.015em] px-4 mb-5">
@@ -182,11 +187,6 @@ const DrinkPage = () => {
               Add Reminder
             </p>
           </button>
-          {showCelebration && (
-            <div className="fixed inset-0 pointer-events-none z-50">
-              <div className="absolute inset-0 flex items-center justify-center"></div>
-            </div>
-          )}
         </div>
       </div>
     </>
