@@ -50,13 +50,13 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
         >
           <IoIosArrowDown />
         </div>
-        <p className="text-[#000000] text-sm font-normal leading-normal">
+        <p className="text-[#000000] text-sm font-medium leading-normal">
           Beverage List
         </p>
       </div>
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
-          <div className="px-4 flex flex-row items-center justify-center my-3">
+          <div className="px-12 pb-3 flex flex-row items-center justify-center my-3 border-b border-[#CFECF4]">
             <h1 className="text-[#000000] ml-2 mr-1 text-xs font-bold leading-normal">
               Selected:
             </h1>
@@ -75,22 +75,24 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
             <div
               key={index}
               onClick={() => handleSelectDrink(drink)}
-              className="text-sm text-normal flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4] cursor-pointer"
+              className="text-sm font-medium flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4] cursor-pointer"
             >
               <span className="mr-2">{drink.icon}</span> {drink.name}
             </div>
           ))}
-          <input
-            type="text"
-            value={newDrink}
-            onChange={(e) => setNewDrink(e.target.value)}
-            placeholder="Enter new beverage"
-            className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
-          />
-          <DrinkModalButton
-            handleAdd={handleAddDrink}
-            handleDelete={handleDeleteDrink}
-          />
+          <div className="px-12 flex flex-col border-t border-[#CFECF4] mt-2">
+            <input
+              type="text"
+              value={newDrink}
+              onChange={(e) => setNewDrink(e.target.value)}
+              placeholder="Enter new beverage"
+              className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 mb-3 p-2 border border-[#CFECF4] rounded-full w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
+            />
+            <DrinkModalButton
+              handleAdd={handleAddDrink}
+              handleDelete={handleDeleteDrink}
+            />
+          </div>
         </div>
       </DrinkModal>
     </>

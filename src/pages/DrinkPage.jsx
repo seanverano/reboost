@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GoGear } from "react-icons/go";
 import { AiOutlineHome } from "react-icons/ai";
+import { FaGlassWater } from "react-icons/fa6";
 import DrinkVolume from "../components/drink_features/DrinkVolume";
 import DrinkType from "../components/drink_features/DrinkType";
 import DrinkLogs from "../components/drink_features/DrinkLogs";
@@ -21,7 +22,6 @@ const DrinkPage = () => {
       setTotalVolume(newTotal);
       setIsAnimating(true);
 
-      // Add to drink logs
       const newLog = {
         drink: selectedDrink.name,
         volume: selectedVolume.name,
@@ -88,7 +88,6 @@ const DrinkPage = () => {
   return (
     <>
       <div className="font-manrope flex flex-col h-[500px] w-[300px] bg-[#F8FBFB] rounded-lg overflow-hidden">
-        {/* Header section remains the same */}
         <div className="flex items-center bg-[#f8fbfb] mt-3 p-1 pb-2 justify-between">
           <button className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0">
             <div className="flex items-center gap-2 text-[#000000] ml-3 hover:text-[#1CABE3] text-lg">
@@ -104,9 +103,8 @@ const DrinkPage = () => {
           </div>
         </div>
 
-        {/* Progress section remains the same */}
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
-          Today's Progress
+          Hydrate and Own the Day
         </h1>
         <div className="flex flex-wrap gap-4 px-10 py-6">
           <div
