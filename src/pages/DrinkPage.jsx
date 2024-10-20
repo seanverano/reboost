@@ -8,6 +8,7 @@ import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
   const [selectedVolume, setSelectedVolume] = useState(null);
+  const [selectedDrink, setSelectedDrink] = useState(null);
   const [totalVolume, setTotalVolume] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
@@ -15,10 +16,18 @@ const DrinkPage = () => {
   const dailyGoal = 2000;
 
   const handleLogDrink = () => {
-    if (selectedVolume) {
+    if (selectedVolume && selectedDrink) {
       const newTotal = totalVolume + parseInt(selectedVolume.name);
       setTotalVolume(newTotal);
       setIsAnimating(true);
+
+      // Add to drink logs
+      const newLog = {
+        drink: selectedDrink.name,
+        volume: selectedVolume.name,
+        timestamp: new Date().toISOString(),
+      };
+      setDrinkLogs([...drinkLogs, newLog]);
 
       if (newTotal >= dailyGoal && totalVolume < dailyGoal) {
         setShowCelebration(true);
@@ -76,20 +85,10 @@ const DrinkPage = () => {
     };
   }, []);
 
-  const addToLogs = (drink, volume) => {
-    setDrinkLogs([
-      ...drinkLogs,
-      {
-        drink: drink,
-        volume: volume,
-        timestamp: new Date(),
-      },
-    ]);
-  };
-
   return (
     <>
       <div className="font-manrope flex flex-col h-[500px] w-[300px] bg-[#F8FBFB] rounded-lg overflow-hidden">
+        {/* Header section remains the same */}
         <div className="flex items-center bg-[#f8fbfb] mt-3 p-1 pb-2 justify-between">
           <button className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0">
             <div className="flex items-center gap-2 text-[#000000] ml-3 hover:text-[#1CABE3] text-lg">
@@ -104,6 +103,8 @@ const DrinkPage = () => {
             </button>
           </div>
         </div>
+
+        {/* Progress section remains the same */}
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
           Today's Progress
         </h1>
@@ -162,11 +163,6 @@ const DrinkPage = () => {
               </p>
             </div>
           </div>
-          {showCelebration && (
-            <div className="absolute inset-0 pointer-events-none z-50 flex items-center justify-center">
-              <div className="flex items-center justify-center"></div>
-            </div>
-          )}
         </div>
 
         <h1 className="text-center font-bold text-[lg] leading-tight tracking-[-0.015em] px-4 mb-5">
@@ -174,7 +170,10 @@ const DrinkPage = () => {
         </h1>
         <div className="flex flex-row">
           <div className="flex-[80%] gap-y-2 mb-4 flex flex-col text-center items-center justify-center">
-            <DrinkType />
+            <DrinkType
+              selectedDrink={selectedDrink}
+              setSelectedDrink={setSelectedDrink}
+            />
             <DrinkVolume
               selectedVolume={selectedVolume}
               setSelectedVolume={setSelectedVolume}
@@ -184,9 +183,9 @@ const DrinkPage = () => {
         <div className="flex flex-row space-x-5 justify-center">
           <button
             onClick={handleLogDrink}
-            disabled={!selectedVolume}
+            disabled={!selectedVolume || !selectedDrink}
             className={`m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center ${
-              selectedVolume
+              selectedVolume && selectedDrink
                 ? "bg-[#1CABE3] cursor-pointer"
                 : "bg-[#1CABE3]/50 cursor-not-allowed"
             } transition-transform duration-200 active:translate-y-1`}
@@ -195,7 +194,7 @@ const DrinkPage = () => {
               Log Drink
             </p>
           </button>
-          <DrinkLogs drinkLogs={drinkLogs} />
+          <DrinkLogs logs={drinkLogs} />
         </div>
       </div>
     </>

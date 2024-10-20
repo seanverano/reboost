@@ -9,10 +9,9 @@ import { BsCupStraw } from "react-icons/bs";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
 
-const DrinkType = () => {
+const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
   const [showModal, setShowModal] = useState(false);
   const [newDrink, setNewDrink] = useState("");
-  const [selectedDrink, setSelectedDrink] = useState(null);
   const [drinks, setDrinks] = useState([
     { name: "Water", icon: <LuGlassWater /> },
     { name: "Coffee", icon: <CiCoffeeCup /> },

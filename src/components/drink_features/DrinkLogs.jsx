@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CheckLogs from "./CheckLogs";
 
-const DrinkLogs = ({ drinkLogs }) => {
+const DrinkLogs = () => {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => setShowModal(true);
