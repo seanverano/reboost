@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { GoGear } from "react-icons/go";
 import { AiOutlineHome } from "react-icons/ai";
 import DrinkVolume from "../components/drink_features/DrinkVolume";
 import DrinkType from "../components/drink_features/DrinkType";
 import DrinkLogs from "../components/drink_features/DrinkLogs";
-import DrinkSettingsModal from "../components/drink_features/DrinkSettingsModal";
+import DrinkSettingsButton from "../components/drink_features/DrinkSettingsModal";
 import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
@@ -107,25 +106,7 @@ const DrinkPage = () => {
               <AiOutlineHome />
             </div>
           </button>
-          <div className="flex w-14 items-center justify-end">
-            <button
-              onClick={() => setShowSettings(true)}
-              className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0"
-            >
-              <div className="text-[#000000] mr-3 hover:text-[#1CABE3] text-lg">
-                <GoGear />
-              </div>
-            </button>
-            <DrinkSettingsModal
-              show={showSettings}
-              onClose={() => setShowSettings(false)}
-              onSaveSettings={handleSaveSettings}
-              currentSettings={{
-                dailyGoal,
-                resetHour,
-              }}
-            />
-          </div>
+          <DrinkSettingsButton />
         </div>
 
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
