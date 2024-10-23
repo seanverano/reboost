@@ -80,7 +80,7 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
               <span className="mr-2">{drink.icon}</span> {drink.name}
             </div>
           ))}
-          <div className="px-12 flex flex-col border-t border-[#CFECF4] mt-2">
+          <div className="px-4 flex flex-col border-t border-[#CFECF4] mt-2">
             <input
               type="text"
               value={newDrink}

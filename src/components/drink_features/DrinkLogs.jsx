@@ -50,7 +50,7 @@ const DrinkLogs = ({ logs = [] }) => {
 
       <CheckLogs show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center h-[400px] w-[280px] items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
-          <div className="flex-none p-4 border-b border-[#CFECF4]">
+          <div className="flex-none p-4 border-b border-[#CFECF4] w-full">
             <h2 className="text-[#000000] text-center text-base font-bold leading-normal">
               Today's Drink Logs
             </h2>
@@ -88,7 +88,7 @@ const DrinkLogs = ({ logs = [] }) => {
                     </div>
                   ))}
               </div>
-              <div className="flex-none border-t border-[#CFECF4] p-4">
+              <div className="flex-none border-t border-[#CFECF4] p-4 w-full">
                 <div className="flex justify-between items-center">
                   <span className="text-[#4f8296] text-sm">Total Volume:</span>
                   <span className="text-[#1CABE3] font-bold">

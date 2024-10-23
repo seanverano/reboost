@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { GoGear } from "react-icons/go";
 import { AiOutlineHome } from "react-icons/ai";
-import { FaGlassWater } from "react-icons/fa6";
 import DrinkVolume from "../components/drink_features/DrinkVolume";
 import DrinkType from "../components/drink_features/DrinkType";
 import DrinkLogs from "../components/drink_features/DrinkLogs";
+import DrinkSettingsModal from "../components/drink_features/DrinkSettingsModal";
 import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
+  const [showSettings, setShowSettings] = useState(false);
+  const [dailyGoal, setDailyGoal] = useState(() => {
+    return parseInt(localStorage.getItem("dailyGoal")) || 2000;
+  });
+  const [resetHour, setResetHour] = useState(() => {
+    return localStorage.getItem("resetHour") || "00:00";
+  });
   const [selectedVolume, setSelectedVolume] = useState(null);
   const [selectedDrink, setSelectedDrink] = useState(null);
   const [totalVolume, setTotalVolume] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
   const [drinkLogs, setDrinkLogs] = useState([]);
-  const dailyGoal = 2000;
 
   const handleLogDrink = () => {
     if (selectedVolume && selectedDrink) {
@@ -41,6 +47,13 @@ const DrinkPage = () => {
         }
       }, 1500);
     }
+  };
+
+  const handleSaveSettings = (settings) => {
+    setDailyGoal(settings.dailyGoal);
+    setResetHour(settings.resetHour);
+    localStorage.setItem("dailyGoal", settings.dailyGoal);
+    localStorage.setItem("resetHour", settings.resetHour);
   };
 
   const triggerCelebration = () => {
@@ -95,11 +108,23 @@ const DrinkPage = () => {
             </div>
           </button>
           <div className="flex w-14 items-center justify-end">
-            <button className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0">
+            <button
+              onClick={() => setShowSettings(true)}
+              className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0"
+            >
               <div className="text-[#000000] mr-3 hover:text-[#1CABE3] text-lg">
                 <GoGear />
               </div>
             </button>
+            <DrinkSettingsModal
+              show={showSettings}
+              onClose={() => setShowSettings(false)}
+              onSaveSettings={handleSaveSettings}
+              currentSettings={{
+                dailyGoal,
+                resetHour,
+              }}
+            />
           </div>
         </div>
 

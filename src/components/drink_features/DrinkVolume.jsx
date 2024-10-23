@@ -78,7 +78,7 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
               <span>{volume.name} ml</span>
             </div>
           ))}
-          <div className="px-12 flex flex-col border-t border-[#CFECF4] mt-2">
+          <div className="px-4 flex flex-col border-t border-[#CFECF4] mt-2">
             <input
               type="number"
               value={newVolume}
