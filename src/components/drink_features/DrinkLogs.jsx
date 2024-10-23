@@ -57,9 +57,9 @@ const DrinkLogs = ({ logs = [] }) => {
           </div>
 
           {logs.length === 0 ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-[#4f8296] p-4">
-              <LuHistory className="text-2xl mb-2" />
-              <p className="text-sm">No drinks logged yet</p>
+            <div className="flex-1 flex flex-row gap-2 text-sm items-center justify-center text-[#4f8296] p-4">
+              <LuHistory />
+              <p>You have no logs for today yet.</p>
             </div>
           ) : (
             <div className="flex-1 flex flex-col overflow-hidden">

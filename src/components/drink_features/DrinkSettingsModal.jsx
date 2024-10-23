@@ -5,22 +5,19 @@ import DrinkSettings from "./DrinkSettings";
 const DrinkSettingsButton = ({ currentSettings, onSaveSettings }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => setShowModal(true);
-  const closeModal = () => setShowModal(false);
-
   return (
     <div className="flex w-14 items-center justify-end">
       <button
-        onClick={openModal}
+        onClick={() => setShowModal(true)}
         className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0"
       >
-        <div className="text-[#000000] mr-3 hover:text-[#1CABE3] text-lg">
+        <div className="text-[#000000] mr-3 hover:text-[#1CABE3] text-lg transition-colors duration-200">
           <GoGear />
         </div>
       </button>
       <DrinkSettings
         show={showModal}
-        onClose={closeModal}
+        onClose={() => setShowModal(false)}
         onSaveSettings={onSaveSettings}
         currentSettings={currentSettings}
       />

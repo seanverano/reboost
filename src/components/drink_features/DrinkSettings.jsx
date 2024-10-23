@@ -15,7 +15,7 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
 
   const handleSave = () => {
     onSaveSettings({
-      dailyGoal: parseInt(dailyGoal),
+      dailyGoal: Number(dailyGoal),
       resetHour,
     });
     onClose();
@@ -84,7 +84,7 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
             </div>
 
             <div className="mt-6 pt-4 border-t border-[#CFECF4]">
-              <h2 className="flex items-center justify-center gap-2 mb-2 text-[#000000] text-center text-sm font-bold leading-normal">
+              <h2 className="flex items-center justify-center gap-2 mb-2 text-[#C53030] text-center text-sm font-bold leading-normal">
                 <IoWarningOutline /> Reset Zone
               </h2>
               <p className="flex items-center gap-2 mb-2 text-[#C53030] text-left text-xs font-bold leading-normal">

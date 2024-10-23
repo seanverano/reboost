@@ -9,7 +9,7 @@ import confetti from "canvas-confetti";
 const DrinkPage = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [dailyGoal, setDailyGoal] = useState(() => {
-    return parseInt(localStorage.getItem("dailyGoal")) || 2000;
+    return Number(localStorage.getItem("dailyGoal")) || 2000;
   });
   const [resetHour, setResetHour] = useState(() => {
     return localStorage.getItem("resetHour") || "00:00";
@@ -21,9 +21,19 @@ const DrinkPage = () => {
   const [showCelebration, setShowCelebration] = useState(false);
   const [drinkLogs, setDrinkLogs] = useState([]);
 
+  useEffect(() => {
+    const savedVolume = localStorage.getItem("totalVolume");
+    const savedLogs = localStorage.getItem("drinkLogs");
+
+    if (savedVolume) setTotalVolume(Number(savedVolume));
+    if (savedLogs) setDrinkLogs(JSON.parse(savedLogs));
+
+    checkAndResetDaily();
+  }, []);
+
   const handleLogDrink = () => {
     if (selectedVolume && selectedDrink) {
-      const newTotal = totalVolume + parseInt(selectedVolume.name);
+      const newTotal = totalVolume + Number(selectedVolume.name);
       setTotalVolume(newTotal);
       setIsAnimating(true);
 
