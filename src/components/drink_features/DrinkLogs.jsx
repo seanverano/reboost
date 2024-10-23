@@ -73,14 +73,14 @@ const DrinkLogs = ({ logs = [] }) => {
                       className="flex items-center justify-between p-3 mb-2 bg-[#F9FBFA] rounded-lg shadow-sm"
                     >
                       <div className="flex items-center justify-between">
-                        <div className="ml-2 text-[#1CABE3] text-sm text-left">
+                        <div className="ml-2 text-[#4f8296] text-sm text-left">
                           {getTimeAgo(log.timestamp)}
                         </div>
                         <div className="ml-14 text-right">
-                          <p className="text-[#000000] text-sm font-medium">
+                          <p className="text-[#1CABE3] text-sm font-medium">
                             {log.drink}
                           </p>
-                          <p className="text-[#4f8296] text-xs">
+                          <p className="text-[#1CABE3] text-xs">
                             {log.volume} ml
                           </p>
                         </div>
@@ -91,7 +91,7 @@ const DrinkLogs = ({ logs = [] }) => {
               <div className="flex-none border-t border-[#CFECF4] p-4 w-full">
                 <div className="flex justify-between items-center">
                   <span className="text-[#4f8296] text-sm">Total Volume:</span>
-                  <span className="text-[#1CABE3] font-bold">
+                  <span className="text-[#000000] font-bold">
                     {(getTotalVolume() / 1000).toFixed(1)}L
                   </span>
                 </div>

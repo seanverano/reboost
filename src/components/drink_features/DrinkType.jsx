@@ -56,17 +56,17 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
       </div>
       <DrinkModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
-          <div className="px-12 pb-3 flex flex-row items-center justify-center my-3 border-b border-[#CFECF4]">
-            <h1 className="text-[#000000] ml-2 mr-1 text-xs font-bold leading-normal">
+          <div className="px-10 pb-3 flex flex-row items-center justify-center my-3 border-b border-[#CFECF4]">
+            <h1 className="text-[#000000] mr-1 text-sm font-bold leading-normal">
               Selected:
             </h1>
             {selectedDrink ? (
-              <div className="flex items-center text-[#1CABE3] text-xs text-normal">
+              <div className="flex items-center text-[#1CABE3] text-sm text-normal">
                 {selectedDrink.icon}
                 <span className="ml-1">{selectedDrink.name}</span>
               </div>
             ) : (
-              <span className="flex items-center text-[#1CABE3] text-xs text-normal">
+              <span className="flex items-center text-[#1CABE3] text-sm text-normal">
                 None
               </span>
             )}
@@ -75,7 +75,7 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
             <div
               key={index}
               onClick={() => handleSelectDrink(drink)}
-              className="text-sm font-medium flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#1CABE3] hover:bg-[#CFECF4] cursor-pointer"
+              className="text-xs font-medium flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#4f8296] hover:bg-[#CFECF4] cursor-pointer"
             >
               <span className="mr-2">{drink.icon}</span> {drink.name}
             </div>

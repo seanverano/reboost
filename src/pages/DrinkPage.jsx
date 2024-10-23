@@ -106,7 +106,15 @@ const DrinkPage = () => {
               <AiOutlineHome />
             </div>
           </button>
-          <DrinkSettingsButton />
+          <DrinkSettingsButton
+            show={showSettings}
+            onClose={() => setShowSettings(false)}
+            onSaveSettings={handleSaveSettings}
+            currentSettings={{
+              dailyGoal,
+              resetHour,
+            }}
+          />
         </div>
 
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
@@ -163,7 +171,8 @@ const DrinkPage = () => {
                     : "text-[#4f8296]"
                 }`}
               >
-                {(totalVolume / 1000).toFixed(1)} of 2L
+                {(totalVolume / 1000).toFixed(1)} of{" "}
+                {(dailyGoal / 1000).toFixed(1)} L
               </p>
             </div>
           </div>
