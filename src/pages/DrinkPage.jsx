@@ -146,7 +146,7 @@ const DrinkPage = () => {
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
           Hydrate and Own the Day
         </h1>
-        <div className="flex flex-wrap gap-4 px-10 py-6">
+        <div className="flex flex-wrap gap-4 px-10 py-5">
           <div
             className={`flex flex-1 flex-col gap-2 rounded-xl border border-[#d0e0e6] bg-[#EEF8FB] backdrop-blur-lg shadow-lg p-6 relative overflow-hidden ${
               isAnimating ? "animate-pulsate" : ""
@@ -204,9 +204,12 @@ const DrinkPage = () => {
           </div>
         </div>
 
-        <h1 className="text-center font-bold text-[lg] leading-tight tracking-[-0.015em] px-4 mb-5">
+        <h1 className="text-center font-bold text-[lg] leading-tight tracking-[-0.015em] px-4 mb-1">
           Your Drink, Your Choice
         </h1>
+        <p className="flex justify-center px-2 text-[#4f8296] text-xs font-normal leading-normal mb-3">
+          Select your drink and volume, then log it.
+        </p>
         <div className="flex flex-row">
           <div className="flex-[80%] gap-y-2 mb-4 flex flex-col text-center items-center justify-center">
             <DrinkType

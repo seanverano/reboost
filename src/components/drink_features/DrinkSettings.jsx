@@ -74,8 +74,8 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
                 Danger Zone
               </h2>
               <p className="flex items-center gap-2 mb-4 text-[#4f8296] text-left text-xs font-normal leading-normal">
-                Resets your progress and logs, perfect for starting fresh each
-                day.
+                Progress and logs reset daily, but you can manually reset with
+                this button.
               </p>
               <div className="flex justify-center">
                 {!showResetConfirm ? (
