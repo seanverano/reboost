@@ -41,9 +41,9 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
           <div className="p-4 space-y-4">
             <div className="flex flex-col justify-center">
               <h1 className="text-[#1CABE3] mb-1 text-sm font-bold leading-normal">
-                Daily Goal (in ml)
+                Daily Goal
               </h1>
-              <p className="flex items-center gap-2 mb-2 text-[#4f8296] text-left text-xs font-normal leading-normal">
+              <p className="flex items-center gap-2 text-[#4f8296] text-left text-xs font-normal leading-normal">
                 Set your daily goal (in ml) to track your progress.
               </p>
               <input
@@ -51,7 +51,7 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
                 value={dailyGoal}
                 placeholder="Enter daily goal (in ml)"
                 onChange={(e) => setDailyGoal(e.target.value)}
-                className="w-full font-semibold placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 mb-1 p-2 border border-[#CFECF4] rounded-lg w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
+                className="w-full font-semibold placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 p-2 border border-[#CFECF4] rounded-lg w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
                 min="500"
                 max="10000"
                 step="100"
@@ -73,7 +73,7 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
               <h2 className="flex items-center gap-2 mb-1 text-[#C53030] text-center text-sm font-bold leading-normal">
                 Danger Zone
               </h2>
-              <p className="flex items-center gap-2 mb-2 text-[#4f8296] text-left text-xs font-normal leading-normal">
+              <p className="flex items-center gap-2 mb-4 text-[#4f8296] text-left text-xs font-normal leading-normal">
                 Resets your progress and logs, perfect for starting fresh each
                 day.
               </p>
@@ -81,7 +81,7 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
                 {!showResetConfirm ? (
                   <button
                     onClick={() => setShowResetConfirm(true)}
-                    className="m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center bg-[#000000] cursor-pointer transition-transform duration-200 active:translate-y-1"
+                    className="mb-1 w-[120px] rounded-full h-10 px-4 flex items-center justify-center bg-[#000000] cursor-pointer transition-transform duration-200 active:translate-y-1"
                   >
                     <p className="text-[#ffffff] text-xs font-bold leading-normal tracking-[0.015em]">
                       Reset

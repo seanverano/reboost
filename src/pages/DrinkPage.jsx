@@ -9,12 +9,14 @@ import confetti from "canvas-confetti";
 const DrinkPage = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [dailyGoal, setDailyGoal] = useState(() => {
-    return Number(localStorage.getItem("dailyGoal")) || 2000;
+    const saved = localStorage.getItem("dailyGoal");
+    return saved ? Number(saved) : 2000;
   });
   const [selectedVolume, setSelectedVolume] = useState(null);
   const [selectedDrink, setSelectedDrink] = useState(null);
   const [totalVolume, setTotalVolume] = useState(() => {
-    return Number(localStorage.getItem("totalVolume")) || 0;
+    const saved = localStorage.getItem("totalVolume");
+    return saved ? Number(saved) : 0;
   });
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
@@ -23,11 +25,26 @@ const DrinkPage = () => {
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Save drink data
   useEffect(() => {
-    localStorage.setItem("totalVolume", String(totalVolume));
+    localStorage.setItem("totalVolume", totalVolume.toString());
     localStorage.setItem("drinkLogs", JSON.stringify(drinkLogs));
-  }, [totalVolume, drinkLogs]);
+    localStorage.setItem("dailyGoal", dailyGoal.toString());
+  }, [totalVolume, drinkLogs, dailyGoal]);
+
+  useEffect(() => {
+    const lastAccessDate = localStorage.getItem("lastAccessDate");
+    const today = new Date().toDateString();
+
+    if (lastAccessDate !== today) {
+      localStorage.setItem("lastAccessDate", today);
+      if (lastAccessDate) {
+        setTotalVolume(0);
+        setDrinkLogs([]);
+        localStorage.setItem("totalVolume", "0");
+        localStorage.setItem("drinkLogs", JSON.stringify([]));
+      }
+    }
+  }, []);
 
   const handleLogDrink = () => {
     if (selectedVolume && selectedDrink) {
@@ -58,7 +75,12 @@ const DrinkPage = () => {
 
   const handleSaveSettings = (settings) => {
     setDailyGoal(settings.dailyGoal);
-    localStorage.setItem("dailyGoal", settings.dailyGoal);
+    if (settings.resetProgress) {
+      setTotalVolume(0);
+      setDrinkLogs([]);
+      localStorage.setItem("totalVolume", "0");
+      localStorage.setItem("drinkLogs", JSON.stringify([]));
+    }
   };
 
   const triggerCelebration = () => {
