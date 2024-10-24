@@ -43,7 +43,7 @@ const DrinkLogs = ({ logs = [] }) => {
         onClick={openModal}
         className="m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center bg-[#000000] cursor-pointer transition-transform duration-200 active:translate-y-1"
       >
-        <p className="text-[#E7F0F2] text-xs font-bold leading-normal tracking-[0.015em]">
+        <p className="text-[#ffffff] text-xs font-bold leading-normal tracking-[0.015em]">
           Check Logs
         </p>
       </button>
@@ -59,7 +59,7 @@ const DrinkLogs = ({ logs = [] }) => {
           {logs.length === 0 ? (
             <div className="flex-1 flex flex-row gap-2 text-sm items-center justify-center text-[#4f8296] p-4">
               <LuHistory />
-              <p>You have no logs for today yet.</p>
+              <p>No drink logs recorded yet.</p>
             </div>
           ) : (
             <div className="flex-1 flex flex-col overflow-hidden">
@@ -91,7 +91,7 @@ const DrinkLogs = ({ logs = [] }) => {
               <div className="flex-none border-t border-[#CFECF4] p-4 w-full">
                 <div className="flex justify-between items-center">
                   <span className="text-[#4f8296] text-sm">Total Volume:</span>
-                  <span className="text-[#000000] font-bold">
+                  <span className="text-[#1CABE3] font-bold">
                     {(getTotalVolume() / 1000).toFixed(1)}L
                   </span>
                 </div>

@@ -11,25 +11,23 @@ const DrinkPage = () => {
   const [dailyGoal, setDailyGoal] = useState(() => {
     return Number(localStorage.getItem("dailyGoal")) || 2000;
   });
-  const [resetHour, setResetHour] = useState(() => {
-    return localStorage.getItem("resetHour") || "00:00";
-  });
   const [selectedVolume, setSelectedVolume] = useState(null);
   const [selectedDrink, setSelectedDrink] = useState(null);
-  const [totalVolume, setTotalVolume] = useState(0);
+  const [totalVolume, setTotalVolume] = useState(() => {
+    return Number(localStorage.getItem("totalVolume")) || 0;
+  });
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
-  const [drinkLogs, setDrinkLogs] = useState([]);
+  const [drinkLogs, setDrinkLogs] = useState(() => {
+    const saved = localStorage.getItem("drinkLogs");
+    return saved ? JSON.parse(saved) : [];
+  });
 
+  // Save drink data
   useEffect(() => {
-    const savedVolume = localStorage.getItem("totalVolume");
-    const savedLogs = localStorage.getItem("drinkLogs");
-
-    if (savedVolume) setTotalVolume(Number(savedVolume));
-    if (savedLogs) setDrinkLogs(JSON.parse(savedLogs));
-
-    checkAndResetDaily();
-  }, []);
+    localStorage.setItem("totalVolume", String(totalVolume));
+    localStorage.setItem("drinkLogs", JSON.stringify(drinkLogs));
+  }, [totalVolume, drinkLogs]);
 
   const handleLogDrink = () => {
     if (selectedVolume && selectedDrink) {
@@ -60,15 +58,12 @@ const DrinkPage = () => {
 
   const handleSaveSettings = (settings) => {
     setDailyGoal(settings.dailyGoal);
-    setResetHour(settings.resetHour);
     localStorage.setItem("dailyGoal", settings.dailyGoal);
-    localStorage.setItem("resetHour", settings.resetHour);
   };
 
   const triggerCelebration = () => {
     const duration = 3 * 1000;
     const end = Date.now() + duration;
-
     const colors = ["#1CABE3", "#EEF8FB", "#CFECF4"];
 
     (function frame() {
@@ -122,7 +117,6 @@ const DrinkPage = () => {
             onSaveSettings={handleSaveSettings}
             currentSettings={{
               dailyGoal,
-              resetHour,
             }}
           />
         </div>
@@ -213,7 +207,7 @@ const DrinkPage = () => {
                 : "bg-[#1CABE3]/50 cursor-not-allowed"
             } transition-transform duration-200 active:translate-y-1`}
           >
-            <p className="text-[#F9FBFA] text-xs font-bold leading-normal tracking-[0.015em]">
+            <p className="text-[#ffffff] text-xs font-bold leading-normal tracking-[0.015em]">
               Log Drink
             </p>
           </button>
