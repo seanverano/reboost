@@ -62,7 +62,7 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
               Selected:
             </h1>
             {selectedDrink ? (
-              <div className="flex items-center text-[#1CABE3] text-sm text-normal">
+              <div className="flex items-center text-[#1CABE3] text-sm text-normal animate-fadeIn">
                 {selectedDrink.icon}
                 <span className="ml-1">{selectedDrink.name}</span>
               </div>
@@ -88,11 +88,12 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
           </div>
 
           <div className="px-4 flex justify-center flex-col border-t border-[#CFECF4] mt-2 w-full">
-            <h1 className="text-left text-[#1CABE3] mb-1 mt-2 text-sm font-bold leading-normal">
+            <h1 className="text-left text-[#1CABE3] mb-1 mt-3 text-sm font-bold leading-normal">
               New Beverage
             </h1>
-            <p className="text-left text-[#4f8296] text-xs font-normal leading-normal mb-2">
-              After typing the beverage, click add or delete to remove it.
+            <p className="text-left text-[#4f8296] text-xs font-normal leading-normal mb-3">
+              After typing the beverage, you can add it to the list or remove
+              the recent one.
             </p>
 
             <input
@@ -100,7 +101,7 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
               value={newDrink}
               onChange={(e) => setNewDrink(e.target.value)}
               placeholder="Create new beverage"
-              className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-3 p-2 border border-[#CFECF4] rounded-full w-full focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
+              className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-3 p-2 border border-[#CFECF4] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
             />
             <DrinkModalButton
               handleAdd={handleAddDrink}

@@ -70,7 +70,7 @@ const DrinkLogs = ({ logs = [] }) => {
                   .map((log, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between p-3 mb-2 bg-[#F9FBFA] rounded-lg shadow-sm"
+                      className="flex items-center justify-between p-3 mb-2 bg-[#CFECF4] rounded-lg shadow-sm"
                     >
                       <div className="flex items-center justify-between">
                         <div className="ml-2 text-[#4f8296] text-sm text-left">

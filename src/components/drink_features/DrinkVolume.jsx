@@ -58,7 +58,7 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
               Selected:
             </h1>
             {selectedVolume ? (
-              <div className="flex items-center text-[#1CABE3] text-sm text-normal">
+              <div className="flex items-center text-[#1CABE3] text-sm text-normal animate-fadeIn">
                 {selectedVolume.icon}
                 <span className="ml-1">{selectedVolume.name} ml</span>
               </div>
@@ -85,18 +85,19 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
           </div>
 
           <div className="px-4 flex flex-col border-t border-[#CFECF4] mt-2 w-full">
-            <h1 className="text-left text-[#1CABE3] mb-1 mt-2 text-sm font-bold leading-normal">
+            <h1 className="text-left text-[#1CABE3] mb-1 mt-3 text-sm font-bold leading-normal">
               New Volume
             </h1>
-            <p className="text-left text-[#4f8296] text-xs font-normal leading-normal mb-2">
-              After typing the volume, click add or delete to remove it.
+            <p className="text-left text-[#4f8296] text-xs font-normal leading-normal mb-3">
+              After typing the volume, you can add it to the list or remove the
+              recent one.
             </p>
             <input
               type="number"
               value={newVolume}
               onChange={(e) => setNewVolume(e.target.value)}
               placeholder="Create new volume (in ml)"
-              className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-3 p-2 border border-[#CFECF4] rounded-full w-full focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
+              className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-3 p-2 border border-[#CFECF4] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
               min="0"
               max="5000"
               step="100"
