@@ -129,7 +129,7 @@ const DrinkPage = () => {
       <div className="font-manrope flex flex-col h-[500px] w-[300px] bg-[#F8FBFB] rounded-lg overflow-hidden">
         <div className="flex items-center bg-[#f8fbfb] mt-3 p-1 pb-2 justify-between">
           <button className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0">
-            <div className="flex items-center gap-2 text-[#000000] ml-3 hover:text-[#1CABE3] text-lg">
+            <div className="flex items-center gap-2 text-[#1CABE3] ml-3 hover:text-[#000000] text-lg">
               <AiOutlineHome />
             </div>
           </button>
