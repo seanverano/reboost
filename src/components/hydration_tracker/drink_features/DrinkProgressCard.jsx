@@ -22,7 +22,7 @@ const DrinkProgressCard = ({
 
         <div className="relative z-10">
           <p
-            className={`mb-2 tracking-light text-4xl font-black leading-tight truncate ${
+            className={`mb-2 tracking-light text-4xl font-bold font-[#000000] leading-tight truncate ${
               calculateProgress() >= 100
                 ? "text-[#F8FBFB]"
                 : calculateProgress() >= 80

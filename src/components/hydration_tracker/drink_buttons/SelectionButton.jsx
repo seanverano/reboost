@@ -8,7 +8,9 @@ const SelectionButton = ({ openModal, title }) => {
         onClick={openModal}
         className="text-[#000000] text-sm flex items-center justify-center rounded-lg bg-[#e8f0f3] size-10 cursor-pointer transition-transform duration-200 active:scale-90"
       >
-        <IoIosArrowDown />
+        <span className="transform rotate-0 transition-transform duration-200 text-lg">
+          <IoIosArrowDown />
+        </span>
       </div>
       <p className="text-[#000000] text-sm font-medium leading-normal">
         {title}
