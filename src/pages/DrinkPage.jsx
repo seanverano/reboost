@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import DrinkVolume from "../components/drink_features/DrinkVolume";
-import DrinkType from "../components/drink_features/DrinkType";
-import DrinkLogs from "../components/drink_features/DrinkLogs";
-import DrinkHeader from "../components/drink_features/DrinkHeader";
-import DrinkProgressCard from "../components/drink_features/DrinkProgressCard";
-import DrinkSelection from "../components/drink_features/DrinkSelection";
+import DrinkHeader from "../components/hydration_tracker/DrinkHeader";
+import DrinkProgressCard from "../components/hydration_tracker/drink_features/DrinkProgressCard";
+import DrinkSelection from "../components/hydration_tracker/drink_features/DrinkSelection";
+import LogADrink from "../components/hydration_tracker/drink_features/LogADrink";
 import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
@@ -153,22 +151,12 @@ const DrinkPage = () => {
           setSelectedVolume={setSelectedVolume}
         />
 
-        <div className="flex flex-row space-x-5 justify-center">
-          <button
-            onClick={handleLogDrink}
-            disabled={!selectedVolume || !selectedDrink}
-            className={`m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center ${
-              selectedVolume && selectedDrink
-                ? "bg-[#1CABE3] cursor-pointer"
-                : "bg-[#1CABE3]/50 cursor-not-allowed"
-            } transition-transform duration-200 active:translate-y-1`}
-          >
-            <p className="text-[#ffffff] text-xs font-bold leading-normal tracking-[0.015em]">
-              Log Drink
-            </p>
-          </button>
-          <DrinkLogs logs={drinkLogs} />
-        </div>
+        <LogADrink
+          handleLogDrink={handleLogDrink}
+          selectedVolume={selectedVolume}
+          selectedDrink={selectedDrink}
+          drinkLogs={drinkLogs}
+        />
       </div>
     </>
   );

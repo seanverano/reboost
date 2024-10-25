@@ -1,5 +1,5 @@
 import { AiOutlineHome } from "react-icons/ai";
-import DrinkSettingsButton from "./DrinkSettingsButton";
+import DrinkSettingsButton from "./drink_buttons/DrinkSettingsButton";
 
 const DrinkHeader = ({
   showSettings,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GoGear } from "react-icons/go";
-import DrinkSettings from "./DrinkSettings";
+import DrinkSettings from "../DrinkSettings";
 
 const DrinkSettingsButton = ({ currentSettings, onSaveSettings }) => {
   const [showModal, setShowModal] = useState(false);
