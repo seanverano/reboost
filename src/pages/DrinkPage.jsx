@@ -208,7 +208,7 @@ const DrinkPage = () => {
           Your Drink, Your Choice
         </h1>
         <p className="flex justify-center px-2 text-[#4f8296] text-xs font-normal leading-normal mb-3">
-          Select your drink and volume, then log it.
+          Select a drink and volume, then log it.
         </p>
         <div className="flex flex-row">
           <div className="flex-[80%] gap-y-2 mb-4 flex flex-col text-center items-center justify-center">

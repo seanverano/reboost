@@ -44,7 +44,7 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
                 Daily Goal
               </h1>
               <p className="flex items-center gap-2 text-[#4f8296] text-left text-xs font-normal leading-normal">
-                Set your daily goal (in ml) to track your progress.
+                Set a daily goal (in ml) to track your progress.
               </p>
               <input
                 type="number"
@@ -74,8 +74,8 @@ const DrinkSettings = ({ show, onClose, onSaveSettings, currentSettings }) => {
                 Danger Zone
               </h2>
               <p className="flex items-center gap-2 mb-4 text-[#4f8296] text-left text-xs font-normal leading-normal">
-                Progress and logs reset daily, but you can manually reset with
-                this button.
+                Progress and logs reset daily. Use this button to reset
+                manually.
               </p>
               <div className="flex justify-center">
                 {!showResetConfirm ? (

@@ -116,8 +116,8 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
               New Beverage
             </h1>
             <p className="text-left text-[#4f8296] text-xs font-normal leading-normal mb-3">
-              After typing the beverage, you can add it to the list or remove
-              the recent one.
+              Type a beverage to add it to the list, or remove the most recent
+              entry.
             </p>
 
             <input
