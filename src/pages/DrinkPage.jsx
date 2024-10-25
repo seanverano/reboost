@@ -4,6 +4,7 @@ import DrinkType from "../components/drink_features/DrinkType";
 import DrinkLogs from "../components/drink_features/DrinkLogs";
 import DrinkHeader from "../components/drink_features/DrinkHeader";
 import DrinkProgressCard from "../components/drink_features/DrinkProgressCard";
+import DrinkSelection from "../components/drink_features/DrinkSelection";
 import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
@@ -145,24 +146,13 @@ const DrinkPage = () => {
           calculateProgress={calculateProgress}
         />
 
-        <h1 className="text-center font-bold text-[lg] leading-tight tracking-[-0.015em] px-4 mb-1">
-          Your Drink, Your Choice
-        </h1>
-        <p className="flex justify-center px-2 text-[#4f8296] text-xs font-normal leading-normal mb-3">
-          Select a drink and volume, then log it.
-        </p>
-        <div className="flex flex-row">
-          <div className="flex-[80%] gap-y-2 mb-4 flex flex-col text-center items-center justify-center">
-            <DrinkType
-              selectedDrink={selectedDrink}
-              setSelectedDrink={setSelectedDrink}
-            />
-            <DrinkVolume
-              selectedVolume={selectedVolume}
-              setSelectedVolume={setSelectedVolume}
-            />
-          </div>
-        </div>
+        <DrinkSelection
+          selectedDrink={selectedDrink}
+          setSelectedDrink={setSelectedDrink}
+          selectedVolume={selectedVolume}
+          setSelectedVolume={setSelectedVolume}
+        />
+
         <div className="flex flex-row space-x-5 justify-center">
           <button
             onClick={handleLogDrink}
