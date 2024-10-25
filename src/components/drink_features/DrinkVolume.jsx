@@ -1,26 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SiRainmeter } from "react-icons/si";
 import { IoIosArrowDown } from "react-icons/io";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
 
+const iconComponents = {
+  SiRainmeter: SiRainmeter,
+};
+
 const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
   const [showModal, setShowModal] = useState(false);
   const [newVolume, setNewVolume] = useState("");
-  const [volumes, setVolumes] = useState([
-    { name: "200", icon: <SiRainmeter /> },
-    { name: "300", icon: <SiRainmeter /> },
-    { name: "400", icon: <SiRainmeter /> },
-    { name: "500", icon: <SiRainmeter /> },
-    { name: "1000", icon: <SiRainmeter /> },
-  ]);
+  const [volumes, setVolumes] = useState(() => {
+    const savedVolumes = localStorage.getItem("volumesList");
+    return savedVolumes
+      ? JSON.parse(savedVolumes)
+      : [
+          { name: "200", iconName: "SiRainmeter" },
+          { name: "300", iconName: "SiRainmeter" },
+          { name: "400", iconName: "SiRainmeter" },
+          { name: "500", iconName: "SiRainmeter" },
+          { name: "1000", iconName: "SiRainmeter" },
+        ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("volumesList", JSON.stringify(volumes));
+  }, [volumes]);
 
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
   const handleAddVolume = () => {
     if (newVolume) {
-      const addedVolume = { name: newVolume, icon: <SiRainmeter /> };
+      const addedVolume = { name: newVolume, iconName: "SiRainmeter" };
       setVolumes([...volumes, addedVolume]);
       setNewVolume("");
     }
@@ -35,6 +48,11 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
 
   const handleSelectVolume = (volume) => {
     setSelectedVolume(volume);
+  };
+
+  const renderIcon = (iconName) => {
+    const IconComponent = iconComponents[iconName];
+    return IconComponent ? <IconComponent /> : null;
   };
 
   return (
@@ -59,7 +77,7 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
             </h1>
             {selectedVolume ? (
               <div className="flex items-center text-[#1CABE3] text-sm text-normal animate-fadeIn">
-                {selectedVolume.icon}
+                {renderIcon(selectedVolume.iconName)}
                 <span className="ml-1">{selectedVolume.name} ml</span>
               </div>
             ) : (
@@ -77,7 +95,7 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
                   onClick={() => handleSelectVolume(volume)}
                   className="text-xs font-medium flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#4f8296] hover:bg-[#CFECF4] cursor-pointer"
                 >
-                  <span className="mr-2">{volume.icon}</span>{" "}
+                  <span className="mr-2">{renderIcon(volume.iconName)}</span>
                   <span>{volume.name} ml</span>
                 </div>
               ))}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { CiCoffeeCup } from "react-icons/ci";
 import { LuCupSoda } from "react-icons/lu";
@@ -9,23 +9,41 @@ import { BsCupStraw } from "react-icons/bs";
 import DrinkModal from "./DrinkModal";
 import DrinkModalButton from "./DrinkModalButton";
 
+const iconComponents = {
+  LuGlassWater: LuGlassWater,
+  CiCoffeeCup: CiCoffeeCup,
+  LuCupSoda: LuCupSoda,
+  GiSodaCan: GiSodaCan,
+  MdOutlineEmojiFoodBeverage: MdOutlineEmojiFoodBeverage,
+  BsCupStraw: BsCupStraw,
+};
+
 const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
   const [showModal, setShowModal] = useState(false);
   const [newDrink, setNewDrink] = useState("");
-  const [drinks, setDrinks] = useState([
-    { name: "Water", icon: <LuGlassWater /> },
-    { name: "Coffee", icon: <CiCoffeeCup /> },
-    { name: "Juice", icon: <LuCupSoda /> },
-    { name: "Soda", icon: <GiSodaCan /> },
-    { name: "Tea", icon: <MdOutlineEmojiFoodBeverage /> },
-  ]);
+  const [drinks, setDrinks] = useState(() => {
+    const savedDrinks = localStorage.getItem("drinksList");
+    return savedDrinks
+      ? JSON.parse(savedDrinks)
+      : [
+          { name: "Water", iconName: "LuGlassWater" },
+          { name: "Coffee", iconName: "CiCoffeeCup" },
+          { name: "Juice", iconName: "LuCupSoda" },
+          { name: "Soda", iconName: "GiSodaCan" },
+          { name: "Tea", iconName: "MdOutlineEmojiFoodBeverage" },
+        ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("drinksList", JSON.stringify(drinks));
+  }, [drinks]);
 
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
   const handleAddDrink = () => {
     if (newDrink) {
-      const addedDrink = { name: newDrink, icon: <BsCupStraw /> };
+      const addedDrink = { name: newDrink, iconName: "BsCupStraw" };
       setDrinks([...drinks, addedDrink]);
       setNewDrink("");
     }
@@ -40,6 +58,11 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
 
   const handleSelectDrink = (drink) => {
     setSelectedDrink(drink);
+  };
+
+  const renderIcon = (iconName) => {
+    const IconComponent = iconComponents[iconName];
+    return IconComponent ? <IconComponent /> : null;
   };
 
   return (
@@ -63,7 +86,7 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
             </h1>
             {selectedDrink ? (
               <div className="flex items-center text-[#1CABE3] text-sm text-normal animate-fadeIn">
-                {selectedDrink.icon}
+                {renderIcon(selectedDrink.iconName)}
                 <span className="ml-1">{selectedDrink.name}</span>
               </div>
             ) : (
@@ -81,7 +104,8 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
                   onClick={() => handleSelectDrink(drink)}
                   className="text-xs font-medium flex flex-row items-center justify-center mb-1 px-6 py-2 rounded-lg w-[125px] text-[#4f8296] hover:bg-[#CFECF4] cursor-pointer"
                 >
-                  <span className="mr-2">{drink.icon}</span> {drink.name}
+                  <span className="mr-2">{renderIcon(drink.iconName)}</span>{" "}
+                  {drink.name}
                 </div>
               ))}
             </div>
