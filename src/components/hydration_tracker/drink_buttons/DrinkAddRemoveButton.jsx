@@ -2,7 +2,7 @@ import React from "react";
 import { FaPlus } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-const DrinkModalButton = ({ handleAdd, handleDelete }) => {
+const DrinkAddRemoveButton = ({ handleAdd, handleDelete }) => {
   return (
     <div className="flex flex-row space-x-3 justify-center">
       <button
@@ -21,4 +21,4 @@ const DrinkModalButton = ({ handleAdd, handleDelete }) => {
   );
 };
 
-export default DrinkModalButton;
+export default DrinkAddRemoveButton;
