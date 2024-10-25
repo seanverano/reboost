@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineHome } from "react-icons/ai";
 import DrinkVolume from "../components/drink_features/DrinkVolume";
 import DrinkType from "../components/drink_features/DrinkType";
 import DrinkLogs from "../components/drink_features/DrinkLogs";
-import DrinkSettingsButton from "../components/drink_features/DrinkSettingsModal";
+import DrinkHeader from "../components/drink_features/DrinkHeader";
 import confetti from "canvas-confetti";
 
 const DrinkPage = () => {
@@ -127,21 +126,12 @@ const DrinkPage = () => {
   return (
     <>
       <div className="font-manrope flex flex-col h-[500px] w-[300px] bg-[#F8FBFB] rounded-lg overflow-hidden">
-        <div className="flex items-center bg-[#f8fbfb] mt-3 p-1 pb-2 justify-between">
-          <button className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0">
-            <div className="flex items-center gap-2 text-[#1CABE3] ml-3 hover:text-[#000000] text-lg">
-              <AiOutlineHome />
-            </div>
-          </button>
-          <DrinkSettingsButton
-            show={showSettings}
-            onClose={() => setShowSettings(false)}
-            onSaveSettings={handleSaveSettings}
-            currentSettings={{
-              dailyGoal,
-            }}
-          />
-        </div>
+        <DrinkHeader
+          showSettings={showSettings}
+          setShowSettings={setShowSettings}
+          handleSaveSettings={handleSaveSettings}
+          dailyGoal={dailyGoal}
+        />
 
         <h1 className="mt-2 text-center text-[#000000] font-bold text-[lg] leading-tight tracking-[-0.015em]">
           Hydrate and Own the Day
