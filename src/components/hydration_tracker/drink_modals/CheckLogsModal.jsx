@@ -13,7 +13,7 @@ const CheckLogsModal = ({ show, onClose, children }) => {
       <div className="bg-transparent rounded-lg p-2 w-[320px] relative animate-fadeIn">
         <button
           onClick={onClose}
-          className="absolute right-11 top-5 w-6 h-6 flex items-center justify-center"
+          className="absolute right-10 top-4 w-6 h-6 flex items-center justify-center"
         >
           <span className="text-[#1CABE3] hover:text-[#000000] text-lg transition-colors duration-200">
             <IoClose className="text-[#1CABE3] hover:text-[#000000] text-lg" />
