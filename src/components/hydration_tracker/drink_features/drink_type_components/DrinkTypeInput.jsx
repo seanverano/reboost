@@ -22,10 +22,10 @@ const DrinkTypeInput = ({ drinks, setDrinks }) => {
   return (
     <div className="px-4 flex justify-center flex-col border-t border-[#CFECF4] mt-2 w-full">
       <h1 className="text-left text-[#1CABE3] mb-1 mt-3 text-sm font-bold leading-normal">
-        New Beverage
+        Custom Beverage
       </h1>
       <p className="text-left text-[#4f8296] text-xs font-normal leading-normal mb-3">
-        Type a beverage to add it to the list, or remove the most recent entry.
+        Enter a beverage to add it to the list, or remove the most recent entry.
       </p>
 
       <input

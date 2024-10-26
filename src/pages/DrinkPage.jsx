@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DrinkHeader from "../components/hydration_tracker/DrinkHeader";
-import DrinkProgressCard from "../components/hydration_tracker/drink_features/DrinkProgressCard";
-import DrinkSelection from "../components/hydration_tracker/drink_features/DrinkSelection";
-import LogADrink from "../components/hydration_tracker/drink_features/LogADrink";
+import DrinkProgressCard from "../components/hydration_tracker/DrinkProgressCard";
+import DrinkSelection from "../components/hydration_tracker/DrinkSelection";
+import LogADrink from "../components/hydration_tracker/LogADrink";
 import confetti from "canvas-confetti";
 
 const DrinkPage = () => {

@@ -22,11 +22,10 @@ const DrinkVolumeInput = ({ volumes, setVolumes }) => {
   return (
     <div className="px-4 flex flex-col border-t border-[#CFECF4] mt-2 w-full">
       <h1 className="text-left text-[#1CABE3] mb-1 mt-3 text-sm font-bold leading-normal">
-        New Volume
+        Custom Volume
       </h1>
       <p className="text-left text-[#4f8296] text-xs font-normal leading-normal mb-3">
-        After typing the volume, you can add it to the list or remove the recent
-        one.
+        Enter a volume to add it to the list, or remove the most recent entry.
       </p>
       <input
         type="number"
