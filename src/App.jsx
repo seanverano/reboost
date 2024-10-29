@@ -8,7 +8,7 @@ function App() {
       <div className="flex flex-col items-center justify-center w-[300px] h-[500px] bg-[#ffffff] shadow-lg rounded-lg">
         <Router>
           <Routes>
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/hydration-tracker" element={<DrinkPage />} />
           </Routes>
         </Router>

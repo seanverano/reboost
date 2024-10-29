@@ -9,7 +9,7 @@ const DrinkHeader = ({
   dailyGoal,
 }) => {
   const navigate = useNavigate();
-  const goHome = () => navigate("/home");
+  const goHome = () => navigate("/");
 
   return (
     <div className="flex items-center mt-3 p-1 pb-2 justify-between">
