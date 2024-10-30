@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import WavesBackground from "../components/homepage_components/WavesBackground";
 import HeroSection from "../components/homepage_components/HeroSection";
+import HomePageButton from "../components/homepage_components/HomePageButton";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -12,13 +13,7 @@ const HomePage = () => {
 
       <div className="relative z-10 flex flex-col items-center pt-8">
         <HeroSection />
-
-        <button
-          onClick={goDrink}
-          className="px-6 py-2 bg-[#4f8296] text-white rounded-lg hover:bg-[#3d6475] transition-colors"
-        >
-          Hydration Tracker
-        </button>
+        <HomePageButton />
       </div>
     </div>
   );
