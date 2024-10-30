@@ -1,13 +1,13 @@
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 
-const HomePageButton = ({ goDrink }) => {
+const HomePageButton = ({ goMenu }) => {
   return (
     <>
       <div className="flex flex-col justify-center gap-2 relative">
         <div className="text-sm font-bold text-center">
           <button
-            onClick={goDrink}
+            onClick={goMenu}
             className="group relative inline-flex items-center px-6 py-2 rounded-lg text-[#F8F2F0] bg-[#000000] leading-normal tracking-[0.015em] transition-all duration-300
                      hover:pr-9"
           >
@@ -20,7 +20,6 @@ const HomePageButton = ({ goDrink }) => {
         </div>
         <div className="text-sm font-bold text-center border-black ">
           <button
-            onClick={goDrink}
             className="group relative inline-flex items-center px-6 py-2 rounded-lg text-[#000000] bg-[transparent] leading-normal tracking-[0.015em] transition-all duration-300
                      hover:pr-9"
           >

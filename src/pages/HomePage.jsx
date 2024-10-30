@@ -6,7 +6,7 @@ import HomePageFooter from "../components/homepage_components/HomePageFooter";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const goDrink = () => navigate("/hydration-tracker");
+  const goMenu = () => navigate("/menu");
 
   return (
     <div className="bg-[#F8FBFB] relative w-[300px] h-[500px] rounded-lg overflow-hidden font-manrope">
@@ -14,7 +14,7 @@ const HomePage = () => {
 
       <div className="relative z-10 flex flex-col items-center pt-8">
         <HeroSection />
-        <HomePageButton goDrink={goDrink} />
+        <HomePageButton goMenu={goMenu} />
       </div>
 
       <HomePageFooter />
