@@ -11,7 +11,7 @@ const WavesBackground = () => {
 
           <path
             fill="none"
-            stroke="#F8F2F0"
+            stroke="#E8F0F3"
             strokeWidth="3"
             d="M0,246L60,224.7C120,203,240,161,360,155.3C480,150,600,182,720,166C840,150,960,86,1080,70C1200,54,1320,86,1380,102L1440,118"
           />
@@ -28,7 +28,7 @@ const WavesBackground = () => {
 
           <path
             fill="none"
-            stroke="#F8F2F0"
+            stroke="#E8F0F3"
             stroke-width="3"
             d="M0,266L80,266C160,266,320,266,480,228.7C640,191,800,117,960,90C1120,63,1280,85,1360,95.3L1440,106"
           ></path>
