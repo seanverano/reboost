@@ -3,14 +3,16 @@ import logo from "../../assets/logo.png";
 const HeroSection = () => {
   return (
     <>
-      <div className="w-48 h-48 flex items-center justify-center">
-        <img src={logo} alt="Reboost Logo" className="max-w-full h-auto" />
+      <div className="w-36 h-36 flex items-center justify-center text-center mt-6 mb-1">
+        <img src={logo} alt="Reboost Logo" />
       </div>
-      <h1 className="text-center font-bold text-2xl leading-tight tracking-[-0.015em] px-4 mb-1">
-        Reboost
-      </h1>
-      <p className="flex justify-center px-2 text-[#4f8296] text-xs font-normal leading-normal mb-5">
-        Reboot your day with a vibrant boost, one healthy habit at a time.
+      <div className="relative group mb-1">
+        <h1 className="text-center font-extrabold text-3xl px-4 mb-1 bg-gradient-to-r from-[#1CABE3] to-[#80D261] text-transparent bg-clip-text">
+          Reboost
+        </h1>
+      </div>
+      <p className="text-center px-5 text-[#4f8296] text-xs font-normal leading-normal mb-5">
+        Refresh your day with a wellness boost, one healthy habit at a time.
       </p>
     </>
   );
