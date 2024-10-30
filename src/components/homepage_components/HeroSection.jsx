@@ -11,7 +11,7 @@ const HeroSection = () => {
           Reboost
         </h1>
       </div>
-      <p className="text-center px-5 text-[#4f8296] text-xs font-normal leading-normal mb-8">
+      <p className="text-center px-8 text-[#4f8296] text-xs font-normal leading-normal mb-8">
         Refresh your day with a wellness boost, one healthy habit at a time.
       </p>
     </>
