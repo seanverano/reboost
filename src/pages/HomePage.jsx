@@ -8,12 +8,12 @@ const HomePage = () => {
   const goDrink = () => navigate("/hydration-tracker");
 
   return (
-    <div className="relative w-[300px] h-[500px] overflow-x-hidden overflow-y-hidden font-manrope">
+    <div className="bg-[#F8FBFB] relative w-[300px] h-[500px] overflow-x-hidden overflow-y-hidden font-manrope">
       <WavesBackground />
 
       <div className="relative z-10 flex flex-col items-center pt-8">
         <HeroSection />
-        <HomePageButton />
+        <HomePageButton goDrink={goDrink} />
       </div>
     </div>
   );
