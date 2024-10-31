@@ -20,7 +20,7 @@ const HomePageButton = ({ goMenu }) => {
         </div>
         <div className="text-sm font-bold text-center border-black ">
           <button
-            className="group relative inline-flex items-center px-6 py-2 rounded-lg text-[#000000] bg-[transparent] leading-normal tracking-[0.015em] transition-all duration-300
+            className="group relative inline-flex items-center px-6 py-2 rounded-lg text-[#000000] bg-[#F0F0F0] leading-normal tracking-[0.015em] transition-all duration-300
                      hover:pr-9"
           >
             <span>Learn More</span>
