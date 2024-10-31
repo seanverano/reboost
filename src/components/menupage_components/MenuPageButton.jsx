@@ -2,7 +2,7 @@ import React from "react";
 import { GrNotes } from "react-icons/gr";
 import { BiBell } from "react-icons/bi";
 
-const MenuPageButton = ({ goDrink }) => {
+const MenuPageButton = ({ goDrink, goWell }) => {
   return (
     <div className="flex flex-col justify-center gap-3 relative bg-gradient-to-r from-[#1CABE3] to-[#80D261]">
       <p className="text-center px-4 text-[#F8FBFB] text-sm font-normal leading-normal mb-2">
@@ -46,6 +46,7 @@ const MenuPageButton = ({ goDrink }) => {
               <div className="relative group">
                 <div className="cursor-pointer w-8 h-8 rounded-full bg-[#019963] flex items-center justify-center transform transition-all duration-300 group-hover:scale-150 group-hover:bg-transparent">
                   <BiBell
+                    onClick={goWell}
                     className="text-white group-hover:text-[#019963] transition-colors duration-300"
                     size={20}
                   />

@@ -8,6 +8,7 @@ const MenuPage = () => {
   const navigate = useNavigate();
   const goHome = () => navigate("/");
   const goDrink = () => navigate("/hydration-tracker");
+  const goWell = () => navigate("/wellness-reminder");
 
   return (
     <div className="bg-[#F8FBFB] relative w-[300px] h-[500px] rounded-lg overflow-hidden font-manrope">
@@ -17,7 +18,7 @@ const MenuPage = () => {
         </div>
       </div>
       <WavesBackgroundTwo />
-      <MenuPageButton goDrink={goDrink} />
+      <MenuPageButton goDrink={goDrink} goWell={goWell} />
       <MenuPageFooter goHome={goHome} />
     </div>
   );
