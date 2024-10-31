@@ -1,7 +1,7 @@
 const MenuPageButton = ({ goDrink }) => {
   return (
     <>
-      <div className="flex flex-col justify-center gap-2 relative bg-[#F8FBFB] pt-4">
+      <div className="flex flex-col justify-center gap-3 relative bg-[#F8FBFB] pt-2">
         <div className="text-sm font-bold text-center">
           <p className="text-center px-8 text-[#4f8296] text-xs font-normal leading-normal mb-4">
             Refresh your day with a wellness boost, one healthy habit at a time.
@@ -9,25 +9,23 @@ const MenuPageButton = ({ goDrink }) => {
           <div className="flex flex-col text-sm font-bold text-center mx-2">
             <button
               onClick={goDrink}
-              className="mx-3 items-center px-4 py-3 rounded-lg text-[#F8FBFB] bg-[#1CABE3]"
+              className="mx-3 items-center px-4 py-3 rounded-lg text-[#F8FBFB] bg-[#1CABE3] hover:text-[#1CABE3] hover:bg-[transparent]"
             >
-              <span className="text-lg leading-normal tracking-[0.015em]">
+              <span className="text-lg font-bold leading-normal tracking-[0.015em]">
                 Hydration Tracker
               </span>
-              <p className="text-xs text-[#F8FBFB]/80">
+              <p className="text-xs font-normal">
                 Track and log your water intake.
               </p>
             </button>
           </div>
         </div>
         <div className="flex flex-col text-sm font-bold text-center mx-2">
-          <button className="items-center mx-3 px-4 py-3 rounded-lg text-[#F8FBFB] bg-[#019963]">
-            <span className="text-lg leading-normal tracking-[0.015em]">
+          <button className="items-center mx-3 px-4 py-3 rounded-lg text-[#F8FBFB] bg-[#019963] hover:text-[#019963] hover:bg-[transparent]">
+            <span className="text-lg font-bold leading-normal tracking-[0.015em]">
               Wellness Reminder
             </span>
-            <p className="text-xs text-[#F8FBFB]/80">
-              Get various break reminders.
-            </p>
+            <p className="text-xs font-normal">Get various break reminders.</p>
           </button>
         </div>
       </div>
