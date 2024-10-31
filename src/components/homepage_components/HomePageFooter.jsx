@@ -10,7 +10,7 @@ const HomePageFooter = () => {
             href="https://www.linkedin.com/in/sdverano"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#1CABE3] font-bold flex items-center text-sm hover:scale-105"
+            className="text-[#1CABE3] font-bold flex items-center text-sm"
           >
             Sean Verano <FaLinkedin className="ml-1" />
           </a>
