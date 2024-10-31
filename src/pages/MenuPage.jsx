@@ -7,7 +7,7 @@ import WavesBackgroundTwo from "../components/menupage_components/WaveBackground
 const MenuPage = () => {
   const navigate = useNavigate();
   const goHome = () => navigate("/");
-  const goDrink = () => navigate("/test");
+  const goDrink = () => navigate("/hydration-tracker");
   const goWell = () => navigate("/wellness-reminder");
 
   return (
