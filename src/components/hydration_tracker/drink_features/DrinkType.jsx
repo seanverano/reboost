@@ -4,6 +4,7 @@ import DrinkTypeList from "./drink_type_components/DrinkTypeList";
 import DrinkTypeInput from "./drink_type_components/DrinkTypeInput";
 import SelectionButton from "../drink_buttons/SelectionButton";
 import { iconComponents } from "../drink_utilities/iconMapping";
+import { defaultDrinks } from "../drink_utilities/defaultData";
 
 const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
   const [showModal, setShowModal] = useState(false);

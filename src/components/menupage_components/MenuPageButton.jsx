@@ -4,7 +4,7 @@ import { BiBell } from "react-icons/bi";
 
 const MenuPageButton = ({ goDrink, goWell }) => {
   return (
-    <div className="flex flex-col justify-center gap-3 relative bg-gradient-to-r from-[#1CABE3] to-[#80D261]">
+    <div className="flex flex-col justify-center gap-3 relative bg-gradient-to-r from-[#1CABE3] to-[#80D261] m-0 p-0">
       <p className="text-center px-4 text-[#F8FBFB] text-sm font-normal leading-normal mb-2">
         Explore the app's two core features
       </p>
