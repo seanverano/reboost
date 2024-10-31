@@ -10,8 +10,8 @@ const HeroSection = () => {
         <h1 className="text-center font-extrabold text-5xl px-4 bg-gradient-to-r from-[#1CABE3] to-[#80D261] text-transparent bg-clip-text">
           Reboost
         </h1>
-        <p className="text-center px-8 text-[#4f8296] text-xs font-normal leading-normal mb-6">
-          Refresh your day with a wellness boost, one healthy habit at a time.
+        <p className="text-center px-12 text-[#4f8296] text-xs font-normal leading-normal mb-6">
+          Refresh and boost your well-being, one healthy habit at a time.
         </p>
       </div>
     </>
