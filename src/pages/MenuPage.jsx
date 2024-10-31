@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import MenuPageButton from "../components/menupage_components/MenuPageButton";
 import MenuPageFooter from "../components/menupage_components/MenuPageFooter";
+import WavesBackgroundTwo from "../components/menupage_components/WaveBackgroundTwo";
 
 const MenuPage = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const MenuPage = () => {
           <img src={logo} alt="Hero Image 1" />
         </div>
       </div>
+      <WavesBackgroundTwo />
       <MenuPageButton goDrink={goDrink} />
       <MenuPageFooter goHome={goHome} />
     </div>
