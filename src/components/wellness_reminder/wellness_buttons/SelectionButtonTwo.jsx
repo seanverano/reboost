@@ -12,9 +12,9 @@ const SelectionButtonTwo = ({ openModal, title }) => {
           <IoIosArrowDown />
         </span>
       </div>
-      <p className="text-[#000000] text-sm font-medium leading-normal">
+      <div className="text-[#000000] text-sm font-medium leading-normal">
         {title}
-      </p>
+      </div>
     </div>
   );
 };

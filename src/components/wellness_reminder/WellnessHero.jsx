@@ -8,7 +8,7 @@ const WellnessHero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
@@ -33,7 +33,7 @@ const WellnessHero = () => {
         <BannerSlideButton prevSlide={prevSlide} nextSlide={nextSlide} />
       </div>
 
-      <div className="mt-2 text-center">
+      <div className="mt-2 px-4 text-center">
         <p className="text-xs font-normal">{slides[currentSlide].text}</p>
       </div>
 

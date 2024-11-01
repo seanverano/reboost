@@ -5,17 +5,19 @@ const WellnessSelectionModal = ({ show, onClose, children }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-[#000000] bg-opacity-50 flex justify-center items-center z-20 animate-fadeIn"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-white rounded-lg p-4 relative max-w-md w-full">
+      <div className="bg-transparent rounded-lg p-6 w-[320px] relative animate-fadeIn">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+          className="absolute right-8 top-8 w-6 h-6 flex items-center justify-center"
         >
-          <IoClose size={24} />
+          <span className="text-[#019963] hover:text-[#000000] text-lg transition-colors duration-200">
+            <IoClose className="text-[#019963] hover:text-[#000000] text-lg" />
+          </span>
         </button>
         {children}
       </div>

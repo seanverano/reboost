@@ -33,10 +33,6 @@ const slides = [
     text: "Stay hydrated throughout the day. A sip of water goes a long way.",
   },
   {
-    image: nap,
-    text: "A short, refreshing nap can recharge both your body and mind.",
-  },
-  {
     image: wellness,
     text: "Small wellness breaks add up. Keep nurturing yourself every day.",
   },
