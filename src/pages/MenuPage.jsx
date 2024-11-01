@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import menu from "../assets/menu.png";
+import menu from "../assets/images/menu.png";
 import MenuPageButton from "../components/menupage_components/MenuPageButton";
 import MenuPageFooter from "../components/menupage_components/MenuPageFooter";
 import WavesBackgroundTwo from "../components/menupage_components/WaveBackgroundTwo";

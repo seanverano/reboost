@@ -1,9 +1,9 @@
-import work from "../../../assets/work.png";
-import walk from "../../../assets/walk.png";
-import drink from "../../../assets/drink.png";
-import eye from "../../../assets/eye.png";
-import nap from "../../../assets/nap.png";
-import wellness from "../../../assets/wellness.png";
+import work from "../../../assets/images/work.png";
+import walk from "../../../assets/images/walk.png";
+import drink from "../../../assets/images/drink.png";
+import eye from "../../../assets/images/eye.png";
+import nap from "../../../assets/images/nap.png";
+import wellness from "../../../assets//images/wellness.png";
 
 const slides = [
   {
