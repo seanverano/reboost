@@ -3,7 +3,9 @@ import walk from "../../../assets/images/walk.png";
 import drink from "../../../assets/images/drink.png";
 import eye from "../../../assets/images/eye.png";
 import nap from "../../../assets/images/nap.png";
-import wellness from "../../../assets//images/wellness.png";
+import stretch from "../../../assets/images/stretch.png";
+import snack from "../../../assets/images/snack.png";
+import wellness from "../../../assets/images/wellness.png";
 
 const slides = [
   {
@@ -15,8 +17,16 @@ const slides = [
     text: "Rest your eyes and look away for a moment. Your vision will thank you.",
   },
   {
+    image: stretch,
+    text: "Stretch it out to release tension and feel refreshed.",
+  },
+  {
     image: walk,
     text: "Take a quick walk. It'll refresh your mind and boost your energy.",
+  },
+  {
+    image: snack,
+    text: "Enjoy a snack to keep your energy up.",
   },
   {
     image: drink,
