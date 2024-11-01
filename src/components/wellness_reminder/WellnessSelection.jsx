@@ -1,8 +1,11 @@
 import ReminderType from "./wellness_features/ReminderType";
+import AudioType from "./wellness_features/AudioType";
 
 const WellnessSelection = ({
   selectedReminderType,
   setSelectedReminderType,
+  selectedAudioType,
+  setSelectedAudioType,
 }) => {
   return (
     <div className="relative z-10">
@@ -17,6 +20,10 @@ const WellnessSelection = ({
           <ReminderType
             selectedReminderType={selectedReminderType}
             setSelectedReminderType={setSelectedReminderType}
+          />
+          <AudioType
+            selectedAudioType={selectedAudioType}
+            setSelectedAudioType={setSelectedAudioType}
           />
         </div>
       </div>

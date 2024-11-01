@@ -32,7 +32,7 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
         title={
           selectedDrink ? (
             <div className="flex items-center text-sm text-[#000000]">
-              {`Beverage List: `}
+              {`Selected: `}
               <span className="flex flex-row items-center ml-1 gap-1 text-xs  text-[#1CABE3] font-normal">
                 {renderIcon(selectedDrink.iconName)}
                 {selectedDrink.name}

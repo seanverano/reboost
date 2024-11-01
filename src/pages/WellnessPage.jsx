@@ -5,6 +5,8 @@ import WellnessSelection from "../components/wellness_reminder/WellnessSelection
 
 const WellnessPage = () => {
   const [selectedReminderType, setSelectedReminderType] = useState(null);
+  const [selectedAudioType, setSelectedAudioType] = useState(null);
+
   return (
     <div className="bg-[#F8FBFB] relative w-[300px] h-[500px] rounded-lg overflow-hidden font-manrope">
       <WellnessHeader />
@@ -15,6 +17,8 @@ const WellnessPage = () => {
       <WellnessSelection
         selectedReminderType={selectedReminderType}
         setSelectedReminderType={setSelectedReminderType}
+        selectedAudioType={selectedAudioType}
+        setSelectedAudioType={setSelectedAudioType}
       />
     </div>
   );

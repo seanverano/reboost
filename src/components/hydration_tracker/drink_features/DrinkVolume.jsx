@@ -32,14 +32,14 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
         title={
           selectedVolume ? (
             <div className="flex items-center text-sm text-[#000000]">
-              {`Set Volume: `}
+              {`Selected: `}
               <span className="flex flex-row items-center ml-1 gap-1 text-xs text-[#1CABE3] font-normal">
                 {renderIcon(selectedVolume.iconName)}
                 {selectedVolume.name}
               </span>
             </div>
           ) : (
-            "Set Volume"
+            "Volume List"
           )
         }
       />
