@@ -18,7 +18,7 @@ const DrinkVolumeList = ({
   return (
     <>
       <div className="px-10 pb-3 flex flex-row items-center justify-center my-1 border-b border-[#CFECF4] w-full">
-        <h1 className="text-[#000000] mr-1 text-sm font-bold leading-normal">
+        <h1 className="text-[#000000] mr-1 text-sm font-semibold leading-normal">
           Selected:
         </h1>
         {selectedVolume ? (
