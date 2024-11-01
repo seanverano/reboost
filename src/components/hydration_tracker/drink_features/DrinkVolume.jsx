@@ -20,9 +20,29 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
+  const renderIcon = (iconName) => {
+    const IconComponent = iconComponents[iconName];
+    return IconComponent ? <IconComponent /> : null;
+  };
+
   return (
     <>
-      <SelectionButton openModal={openModal} title="Set Volume" />
+      <SelectionButton
+        openModal={openModal}
+        title={
+          selectedVolume ? (
+            <div className="flex items-center text-sm text-[#000000]">
+              {`Set Volume: `}
+              <span className="flex flex-row items-center ml-1 gap-1 text-xs text-[#1CABE3] font-normal">
+                {renderIcon(selectedVolume.iconName)}
+                {selectedVolume.name}
+              </span>
+            </div>
+          ) : (
+            "Set Volume"
+          )
+        }
+      />
       <DrinkSelectionModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg max-h-[80vh]">
           <DrinkVolumeList

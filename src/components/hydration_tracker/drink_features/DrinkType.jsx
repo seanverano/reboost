@@ -20,9 +20,30 @@ const DrinkType = ({ selectedDrink, setSelectedDrink }) => {
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
+  const renderIcon = (iconName) => {
+    const IconComponent = iconComponents[iconName];
+    return IconComponent ? <IconComponent /> : null;
+  };
+
   return (
     <>
-      <SelectionButton openModal={openModal} title="Beverage List" />
+      <SelectionButton
+        openModal={openModal}
+        title={
+          selectedDrink ? (
+            <div className="flex items-center text-sm text-[#000000]">
+              {`Beverage List: `}
+              <span className="flex flex-row items-center ml-1 gap-1 text-xs  text-[#1CABE3] font-normal">
+                {renderIcon(selectedDrink.iconName)}
+                {selectedDrink.name}
+              </span>
+            </div>
+          ) : (
+            "Beverage List"
+          )
+        }
+      />
+
       <DrinkSelectionModal show={showModal} onClose={closeModal}>
         <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg max-h-[80vh]">
           <DrinkTypeList

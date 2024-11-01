@@ -34,7 +34,7 @@ const WellnessHero = () => {
       </div>
 
       <div className="mt-2 text-center">
-        <p className="text-xs">{slides[currentSlide].text}</p>
+        <p className="text-xs font-normal">{slides[currentSlide].text}</p>
       </div>
 
       <div className="flex justify-center gap-2 mt-2">
