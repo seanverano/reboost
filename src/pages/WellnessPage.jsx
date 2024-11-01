@@ -1,5 +1,6 @@
 import WellnessHeader from "../components/wellness_reminder/WellnessHeader";
 import WellnessHero from "../components/wellness_reminder/WellnessHero";
+import WellnessSelection from "../components/wellness_reminder/WellnessSelection";
 
 const WellnessPage = () => {
   return (
@@ -9,6 +10,7 @@ const WellnessPage = () => {
         Boost Wellness with a Break
       </h1>
       <WellnessHero />
+      <WellnessSelection />
     </div>
   );
 };
