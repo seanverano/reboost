@@ -26,15 +26,11 @@ const slides = [
   },
   {
     image: snack,
-    text: "Enjoy a snack to keep your energy up.",
+    text: "Enjoy a healthy snack to keep your energy levels up.",
   },
   {
     image: drink,
-    text: "Stay hydrated. A sip of water goes a long way.",
-  },
-  {
-    image: nap,
-    text: "A short nap can recharge your body and mind.",
+    text: "Stay hydrated throughout the day. A sip of water goes a long way.",
   },
   {
     image: wellness,

@@ -8,7 +8,7 @@ const WellnessHero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
@@ -22,7 +22,7 @@ const WellnessHero = () => {
   };
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto px-4 py-5 font-manrope">
+    <div className="relative w-full max-w-3xl mx-auto px-4 py-2 font-manrope">
       <div className="relative aspect-video flex items-center justify-center">
         <img
           src={slides[currentSlide].image}
@@ -33,16 +33,16 @@ const WellnessHero = () => {
         <BannerSlideButton prevSlide={prevSlide} nextSlide={nextSlide} />
       </div>
 
-      <div className="mt-4 text-center">
-        <p className="text-sm">{slides[currentSlide].text}</p>
+      <div className="mt-2 px-4 text-center">
+        <p className="text-xs font-normal">{slides[currentSlide].text}</p>
       </div>
 
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
+            className={`w-1 h-1 rounded-full transition-colors ${
               currentSlide === index ? "bg-[#019963]" : "bg-gray-300"
             }`}
           />

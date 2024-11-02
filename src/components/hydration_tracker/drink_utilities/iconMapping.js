@@ -5,6 +5,7 @@ import { GiSodaCan } from "react-icons/gi";
 import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
 import { BsCupStraw } from "react-icons/bs";
 import { SiRainmeter } from "react-icons/si";
+import { AiOutlineSound } from "react-icons/ai";
 
 export const iconComponents = {
   LuGlassWater,
@@ -14,4 +15,5 @@ export const iconComponents = {
   MdOutlineEmojiFoodBeverage,
   BsCupStraw,
   SiRainmeter,
+  AiOutlineSound,
 };
