@@ -2,6 +2,7 @@ import { useState } from "react";
 import WellnessHeader from "../components/wellness_reminder/WellnessHeader";
 import WellnessHero from "../components/wellness_reminder/WellnessHero";
 import WellnessSelection from "../components/wellness_reminder/WellnessSelection";
+import LogAReminder from "../components/wellness_reminder/LogAReminder";
 
 const WellnessPage = () => {
   const [selectedReminderType, setSelectedReminderType] = useState(null);
@@ -20,6 +21,7 @@ const WellnessPage = () => {
         selectedAudioType={selectedAudioType}
         setSelectedAudioType={setSelectedAudioType}
       />
+      <LogAReminder />
     </div>
   );
 };
