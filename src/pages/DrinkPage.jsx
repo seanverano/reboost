@@ -133,7 +133,7 @@ const DrinkPage = () => {
           dailyGoal={dailyGoal}
         />
 
-        <h1 className="mt-2 text-center text-[#000000] font-semibold text-[lg] leading-tight tracking-[-0.015em]">
+        <h1 className="mt-2 text-center text-[#000000] font-semibold text-lg leading-tight tracking-[-0.015em]">
           Refresh and Own the Day
         </h1>
 
