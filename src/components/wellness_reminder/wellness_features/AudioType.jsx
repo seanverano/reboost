@@ -36,7 +36,7 @@ const AudioType = ({ selectedAudioType, setSelectedAudioType }) => {
       />
 
       <WellnessSelectionModal show={showModal} onClose={closeModal}>
-        <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#F4F9EB] rounded-lg max-h-[80vh]">
+        <div className="flex flex-col justify-center py-4 items-center font-manrope font-medium bg-[#E8F8EE] rounded-lg max-h-[80vh]">
           <AudioTypeList
             audioTypes={defaultAudioTypes}
             selectedAudioType={selectedAudioType}
