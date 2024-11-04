@@ -11,7 +11,7 @@ const MenuPage = () => {
   const goWell = () => navigate("/wellness-reminder");
 
   return (
-    <div className="bg-[#F8FBFB] relative w-[300px] h-[500px] rounded-lg overflow-hidden font-manrope">
+    <div className="bg-[#F8FBFB] relative w-[300px] h-[500px] overflow-hidden font-manrope">
       <div className="relative z-10 flex flex-col items-center">
         <div className="w-48 h-48 flex flex-col items-center justify-center text-center px-6 bg-[#F8FBFB]">
           <img src={menu} alt="Menu Icon" />

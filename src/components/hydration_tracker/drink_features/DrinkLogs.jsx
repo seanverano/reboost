@@ -31,7 +31,7 @@ const DrinkLogs = ({ logs = [] }) => {
       <CheckLogsButton onClick={openModal} />
 
       <CheckLogsModal show={showModal} onClose={closeModal}>
-        <div className="flex flex-col justify-center h-[400px] w-[280px] items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
+        <div className="flex flex-col justify-center h-[400px] items-center font-manrope font-medium bg-[#EEF8FB] rounded-lg">
           <LogsHeader />
 
           {logs.length === 0 ? (
