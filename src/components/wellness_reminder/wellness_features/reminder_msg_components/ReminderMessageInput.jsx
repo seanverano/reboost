@@ -27,7 +27,7 @@ const ReminderMessageInput = ({ message, setMessage }) => {
         rows={3}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-4 p-2 border border-[#CFFFD8] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#019963]"
+        className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-4 p-2 border border-[#C9EADE] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#019963]"
         placeholder="e.g. (Relax your eyes for few mins.)"
       />
     </div>

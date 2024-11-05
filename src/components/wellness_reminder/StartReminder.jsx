@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
+import { FaCheckCircle } from "react-icons/fa";
+import { LuTimer } from "react-icons/lu";
 
 const StartReminder = ({
   show,
@@ -118,15 +120,35 @@ const StartReminder = ({
           </span>
         </button>
 
-        <div className="px-4 flex justify-center flex-col w-full">
+        <div className="px-1 flex justify-center flex-col">
+          <div className="px-10 pb-3 flex flex-row items-center justify-center my-1 border-b border-[#C9EADE] w-full">
+            <h1 className="text-[#000000] mr-1 text-sm font-semibold leading-normal">
+              Added:
+            </h1>
+            {timerDuration > 0 ? (
+              <span className="flex items-center text-[#019963] text-sm font-normal animate-fadeIn">
+                {timerDuration >= 3600
+                  ? `${Math.floor(timerDuration / 3600)} hour${
+                      Math.floor(timerDuration / 3600) > 1 ? "s" : ""
+                    }`
+                  : timerDuration >= 60
+                  ? `${Math.floor(timerDuration / 60)} minute${
+                      Math.floor(timerDuration / 60) > 1 ? "s" : ""
+                    }`
+                  : `${timerDuration} second${timerDuration > 1 ? "s" : ""}`}
+              </span>
+            ) : (
+              <span className="flex items-center text-[#019963] text-sm font-normal">
+                None
+              </span>
+            )}
+          </div>
+
           <h1 className="text-left text-[#019963] mb-1 mt-3 text-sm font-bold leading-normal">
             Reminder Timer
           </h1>
           <div className="text-left flex flex-col text-[#4f8296] text-xs font-normal leading-normal mb-4">
-            Set the timer duration for your reminder in seconds.{" "}
-            <span className="text-center italic mt-2">
-              e.g. (60s = 1 min, 3600s = 1 hr.)
-            </span>
+            Set the timer duration in seconds, then add to start the reminder.{" "}
           </div>
           <input
             type="number"
@@ -135,11 +157,11 @@ const StartReminder = ({
             onChange={(e) => setTimerDuration(parseInt(e.target.value) || 0)}
             min="1"
             placeholder="Set timer (in seconds)"
-            className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-4 p-2 border border-[#CFFFD8] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#019963]"
+            className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-4 p-2 border border-[#C9EADE] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#019963]"
           />
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col items-center">
           <button
             type="button"
             className="text-lg font-bold bg-[#019963] text-[#ffffff] px-4 py-2 rounded-lg hover:bg-[transparent] hover:text-[#019963]"
@@ -148,9 +170,12 @@ const StartReminder = ({
           >
             <FaPlus />
           </button>
+
           {isTimerActive && (
-            <div className="text-gray-900 font-medium">
-              Time Remaining: {formatTime(timeRemaining)}
+            <div className="mt-2 text-gray-900 font-medium">
+              <span className="text-[#019963]">
+                Time Remaining: {formatTime(timeRemaining)}
+              </span>
             </div>
           )}
         </div>
@@ -158,16 +183,16 @@ const StartReminder = ({
 
       {showPopup && (
         <div className="fixed inset-0 flex justify-center items-center z-30">
-          <div className="bg-white rounded-lg p-4 w-[250px] shadow-lg">
-            <h2 className="text-lg font-semibold">
-              {selectedReminderType?.name}
-            </h2>
-            <p className="text-gray-700">{message}</p>
+          <div className="bg-[#F8FBFB] rounded-lg p-4 w-[250px] shadow-lg">
+            <LuTimer />
+            <p>
+              Your reminder timer has ended! Did you receive your notification?
+            </p>
             <button
               onClick={closePopup}
-              className="mt-4 w-full bg-[#019963] hover:bg-[#016f48] text-white font-medium py-2 rounded-lg"
+              className="text-lg font-bold bg-[#019963] text-[#ffffff] px-4 py-2 rounded-lg hover:bg-[transparent] hover:text-[#019963]"
             >
-              Close
+              <FaCheckCircle />
             </button>
           </div>
         </div>
