@@ -36,6 +36,7 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
               <span className="flex flex-row items-center ml-1 gap-1 text-xs text-[#1CABE3] font-normal">
                 {renderIcon(selectedVolume.iconName)}
                 {selectedVolume.name}
+                {` ml`}
               </span>
             </div>
           ) : (

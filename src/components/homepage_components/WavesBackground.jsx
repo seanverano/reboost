@@ -51,7 +51,7 @@ const WavesBackground = () => {
           <path
             fill="none"
             stroke="#F8F2F0"
-            stroke-width="3"
+            strokeWidth="3"
             d="M0,266L80,266C160,266,320,266,480,228.7C640,191,800,117,960,90C1120,63,1280,85,1360,95.3L1440,106"
           ></path>
         </svg>
