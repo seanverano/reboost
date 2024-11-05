@@ -39,7 +39,7 @@ const DrinkVolume = ({ selectedVolume, setSelectedVolume }) => {
               </span>
             </div>
           ) : (
-            "Volume List"
+            "Set Volume"
           )
         }
       />

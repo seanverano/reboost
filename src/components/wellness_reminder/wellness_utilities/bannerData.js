@@ -2,7 +2,6 @@ import work from "../../../assets/images/work.png";
 import walk from "../../../assets/images/walk.png";
 import drink from "../../../assets/images/drink.png";
 import eye from "../../../assets/images/eye.png";
-import nap from "../../../assets/images/nap.png";
 import stretch from "../../../assets/images/stretch.png";
 import snack from "../../../assets/images/snack.png";
 import wellness from "../../../assets/images/wellness.png";

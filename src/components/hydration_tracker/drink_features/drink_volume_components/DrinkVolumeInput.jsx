@@ -31,7 +31,7 @@ const DrinkVolumeInput = ({ volumes, setVolumes }) => {
         type="number"
         value={newVolume}
         onChange={(e) => setNewVolume(e.target.value)}
-        placeholder="Create new volume (in ml)"
+        placeholder="e.g. (420 ml)"
         className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-3 p-2 border border-[#CFECF4] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
         min="0"
         max="5000"
