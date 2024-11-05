@@ -20,7 +20,7 @@ const ReminderMessageInput = ({ message, setMessage }) => {
         Add Message
       </h1>
       <div className="text-left flex flex-col text-[#4f8296] text-xs font-normal leading-normal mb-4">
-        Enter any details or notes to include with your reminder.
+        Enter any details or notes, it auto-saves as you type.
       </div>
       <textarea
         id="message"

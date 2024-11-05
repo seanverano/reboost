@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Reboost",
   "version": "1.0",
-  "description": "Stay refreshed! Track your water intake and receive alerts to hydrate, stand, stretch, and take eye breaks to boost your productivity! ✨",
+  "description": "Stay refreshed! Track your water intake and get alerts to hydrate, rest your eyes or set a custom reminder to boost productivity! ✨",
   "action": {
     "default_popup": "index.html",
     "default_icon": {

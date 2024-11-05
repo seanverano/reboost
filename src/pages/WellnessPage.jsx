@@ -3,14 +3,12 @@ import WellnessHeader from "../components/wellness_reminder/WellnessHeader";
 import WellnessHero from "../components/wellness_reminder/WellnessHero";
 import ReminderInputs from "../components/wellness_reminder/ReminderInputs";
 import StartReminder from "../components/wellness_reminder/StartReminder";
-import StartReminderButton from "../components/wellness_reminder/wellness_buttons/StartReminderButton";
+import SetTimerButton from "../components/wellness_reminder/wellness_buttons/SetTimerButton";
 
 const WellnessPage = () => {
   const [showReminderTest, setShowReminderTest] = useState(false);
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
-  const [isTimerStarted, setIsTimerStarted] = useState(false);
-  const [selectedReminderType, setSelectedReminderType] = useState(null);
 
   const handleOpenReminderTest = () => {
     setShowReminderTest(true);
@@ -34,9 +32,10 @@ const WellnessPage = () => {
         setMessage={setMessage}
       />
       <div className="flex justify-center">
-        <StartReminderButton
+        <SetTimerButton
           handleOpenReminderTest={handleOpenReminderTest}
-          disabled={!title || !message}
+          title={title}
+          message={message}
         />
       </div>
       <StartReminder
@@ -44,7 +43,6 @@ const WellnessPage = () => {
         onClose={handleCloseReminderTest}
         selectedReminderType={{ name: title }}
         message={message}
-        setTimerStarted={setIsTimerStarted}
       />
     </div>
   );

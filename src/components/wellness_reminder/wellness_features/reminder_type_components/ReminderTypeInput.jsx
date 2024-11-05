@@ -20,7 +20,7 @@ const ReminderTypeInput = ({ title, setTitle, placeholder }) => {
         Reminder Title
       </h1>
       <div className="text-left flex flex-col text-[#4f8296] text-xs font-normal leading-normal mb-4">
-        Enter the title of reminder you want to set.
+        Enter the title of the reminder, it auto-saves as you type.
       </div>
       <input
         type="text"

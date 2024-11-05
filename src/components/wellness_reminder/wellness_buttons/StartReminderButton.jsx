@@ -1,16 +1,22 @@
-import React from "react";
+import { FaPlayCircle } from "react-icons/fa";
 
-const StartReminderButton = ({ handleOpenReminderTest }) => {
+const StartReminderButton = ({
+  startReminder,
+  selectedReminderType,
+  message,
+  timerDuration,
+}) => {
   return (
-    <button
-      onClick={handleOpenReminderTest}
-      className={`m-0 w-[120px] rounded-full h-10 px-4 flex items-center justify-center 
-         bg-[#019963] cursor-pointer active:translate-y-1 transition-all duration-200`}
-    >
-      <p className="text-white text-xs font-bold leading-normal tracking-[0.015em]">
-        Start Reminder
-      </p>
-    </button>
+    <div className="flex flex-col items-center">
+      <button
+        type="button"
+        className="text-lg font-bold bg-[#019963] text-[#ffffff] px-4 py-2 rounded-lg hover:bg-[transparent] hover:text-[#019963]"
+        onClick={startReminder}
+        disabled={!selectedReminderType || !message || timerDuration <= 0}
+      >
+        <FaPlayCircle />
+      </button>
+    </div>
   );
 };
 

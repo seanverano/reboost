@@ -6,8 +6,8 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex items-center justify-center w-[300px] h-[500px] bg-[#000000] rounded-lg">
-      <div className="flex flex-col items-center justify-center w-[300px] h-[500px] bg-[#000000] shadow-lg rounded-lg">
+    <div className="flex items-center justify-center w-[300px] h-[500px] bg-[#000000]">
+      <div className="flex flex-col items-center justify-center w-[300px] h-[500px] bg-[#000000]">
         <Router>
           <Routes>
             <Route path="/" element={<HomePage />} />
