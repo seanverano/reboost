@@ -11,7 +11,7 @@ const DailyVolumeGoal = ({ value, onChange }) => (
       value={value}
       placeholder="Enter daily goal (in ml)"
       onChange={onChange}
-      className="w-full font-semibold placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 p-2 border border-[#CFECF4] rounded-lg w-[175px] focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
+      className="w-full font-semibold placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mt-4 p-2 border border-[#CFECF4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
       min="500"
       max="10000"
       step="100"

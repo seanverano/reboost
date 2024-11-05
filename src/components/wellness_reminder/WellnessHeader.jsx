@@ -16,11 +16,6 @@ const WellnessHeader = () => {
           <FiArrowLeft />
         </div>
       </button>
-      <button className="flex cursor-pointer items-center justify-center rounded-full h-4 bg-transparent text-[#000000] gap-2 font-bold leading-normal tracking-[0.015em] p-0">
-        <div className="flex items-center gap-2 text-[#019963] mr-3 hover:text-[#000000] text-lg">
-          <GoGear />
-        </div>
-      </button>
     </div>
   );
 };

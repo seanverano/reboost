@@ -1,6 +1,6 @@
 import { IoClose } from "react-icons/io5";
 
-const WellnessSelectionModal = ({ show, onClose, children }) => {
+const WellnessReminderModal = ({ show, onClose, children }) => {
   if (!show) return null;
 
   return (
@@ -25,4 +25,4 @@ const WellnessSelectionModal = ({ show, onClose, children }) => {
   );
 };
 
-export default WellnessSelectionModal;
+export default WellnessReminderModal;

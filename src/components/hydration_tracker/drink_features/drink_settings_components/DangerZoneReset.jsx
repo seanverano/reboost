@@ -20,7 +20,7 @@ const DangerZoneReset = ({
       {!showResetConfirm ? (
         <ResetButton onClick={onResetClick}>Reset</ResetButton>
       ) : (
-        <div className="flex flex flex-row justify-center items-center">
+        <div className="flex flex-row justify-center items-center">
           <p className="text-xs text-[#4f8296]">
             Are you sure? This cannot be undone.
           </p>

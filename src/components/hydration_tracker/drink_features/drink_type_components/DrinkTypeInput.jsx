@@ -32,7 +32,7 @@ const DrinkTypeInput = ({ drinks, setDrinks }) => {
         type="text"
         value={newDrink}
         onChange={(e) => setNewDrink(e.target.value)}
-        placeholder="Create new beverage"
+        placeholder="e.g. (Milk Tea)"
         className="placeholder:italic bg-[#F9FBFA] text-[#000000] text-xs text-center mb-3 p-2 border border-[#CFECF4] rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-[#1CABE3]"
       />
       <DrinkAddRemoveButton
