@@ -128,8 +128,8 @@ const StartReminder = ({
 
         {showPopup && (
           <div className="fixed inset-0 flex justify-center items-center z-30">
-            <div className="bg-[#F8FBFB] rounded-lg p-4 w-[250px] shadow-lg flex flex-col items-center justify-center">
-              <div className="mb-2">
+            <div className="bg-[#F8FBFB] rounded-lg py-4 w-[225px] shadow-lg flex flex-col items-center justify-center">
+              <div className="mb-4 text-center flex flex-col">
                 <p>Your reminder timer has ended! </p>
                 <p>Did you receive your notification?</p>
               </div>
