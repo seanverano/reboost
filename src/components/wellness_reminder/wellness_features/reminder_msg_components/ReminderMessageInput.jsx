@@ -3,7 +3,7 @@ const ReminderMessageInput = ({ message, setMessage }) => {
     <div className="px-4 flex justify-center flex-col w-full">
       <div className="px-10 pb-3 flex flex-row items-center justify-center my-1 border-b border-[#C9EADE] w-full">
         <h1 className="text-[#000000] mr-1 text-sm font-semibold leading-normal">
-          Saved:
+          Added:
         </h1>
         {message ? (
           <span className="flex items-center text-[#019963] text-sm font-normal animate-fadeIn">

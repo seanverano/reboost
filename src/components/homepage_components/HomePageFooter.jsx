@@ -21,12 +21,12 @@ const HomePageFooter = () => {
         <p className="text-[#4f8296] text-left w-full">
           © 2024 ARR{" "}
           <a
-            href="https://www.linkedin.com/in/sdverano"
+            href="https://reboost.vercel.app/resources"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#019963] hover:text-[#000000] font-bold flex items-center text-xs"
           >
-            <GrResources className="mr-1" /> Attribution
+            <GrResources className="mr-1" /> Resources
           </a>
         </p>
       </div>
