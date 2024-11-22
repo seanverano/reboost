@@ -1,5 +1,5 @@
 import { FaLinkedin } from "react-icons/fa";
-import { GrResources } from "react-icons/gr";
+import { MdOutlinePrivacyTip } from "react-icons/md";
 
 const HomePageFooter = () => {
   return (
@@ -19,14 +19,14 @@ const HomePageFooter = () => {
       </div>
       <div className="text-[10px] font-manrope absolute bottom-0 left-0 bg-transparent px-3 py-2">
         <p className="text-[#4f8296] text-left w-full">
-          © 2024 ARR{" "}
+          © 2024 All Rights Reserved{" "}
           <a
-            href="https://reboost.vercel.app/resources"
+            href="https://reboost.fyi/privacy-policy"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#019963] hover:text-[#000000] font-bold flex items-center text-xs"
           >
-            <GrResources className="mr-1" /> Resources
+            <MdOutlinePrivacyTip className="mr-1" /> Privacy Policy
           </a>
         </p>
       </div>

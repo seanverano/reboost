@@ -6,7 +6,10 @@ const ReminderTimerInput = ({ timerDuration, setTimerDuration }) => {
       </h1>
       <div className="text-left flex flex-col text-[#4f8296] text-xs font-normal leading-normal mb-4">
         Set the timer duration in seconds, then click play to start the
-        reminder.{" "}
+        reminder.
+        <br /> <br />
+        Once the timer starts, you can close the extension. The reminder will
+        notify you when the timer ends.
       </div>
       <input
         type="number"

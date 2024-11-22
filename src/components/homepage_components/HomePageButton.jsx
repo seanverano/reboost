@@ -19,7 +19,10 @@ const HomePageButton = ({ goMenu }) => {
           </button>
         </div>
         <div className="text-sm font-bold text-center border-black ">
-          <button
+          <a
+            href="https://reboost.fyi"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center px-6 py-2 rounded-lg text-[#000000] bg-[#F0F0F0] leading-normal tracking-[0.015em] transition-all duration-300
                      hover:pr-9"
           >
@@ -28,7 +31,7 @@ const HomePageButton = ({ goMenu }) => {
               className="absolute left-[calc(100%-30px)] transform translate-x-8 opacity-0 transition-all duration-300 text-base
                        group-hover:translate-x-0 group-hover:opacity-100"
             />
-          </button>
+          </a>
         </div>
       </div>
     </>
