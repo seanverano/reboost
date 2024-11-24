@@ -5,7 +5,7 @@ const ActiveTimerIndicator = ({ isTimerActive, timeRemaining, formatTime }) => {
     <div className="flex flex-col items-center mt-3">
       {isTimerActive && (
         <div className="text-[#000000]">
-          Current Reminder Time Remaining:{" "}
+          Time Remaining:{" "}
           <span className="text-[#019963] font-bold">
             {formatTime(timeRemaining)}
           </span>
