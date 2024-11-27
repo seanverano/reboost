@@ -8,11 +8,9 @@ const ReminderTimerInput = ({ timerDuration, setTimerDuration }) => {
         Set the timer duration in seconds, then click play to start the
         reminder.
         <br /> <br />
-        Once the timer starts, you can close the extension. The reminder will
-        notify you when the timer ends.
-        <br /> <br />
-        Remember, only one reminder can run at a time. Starting a new one will
-        cancel the current timer.
+        After starting the timer, you can close the extension—it will notify you
+        when it ends. Only one timer runs at a time; starting a new one cancels
+        the current one.
       </div>
       <input
         type="number"
