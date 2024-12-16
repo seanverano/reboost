@@ -6,6 +6,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   } else if (request.action === "getTimerStatus") {
     getTimerStatus(sendResponse);
     return true;
+  } else if (request.action === "updateLastPage") {
+    chrome.storage.local.set(
+      {
+        lastVisitedPage: request.page || "/",
+      },
+      () => {
+        sendResponse({ status: "Page updated", page: request.page || "/" });
+      }
+    );
+    return true;
   }
 });
 

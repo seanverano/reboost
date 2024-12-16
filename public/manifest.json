@@ -18,6 +18,12 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
   "permissions": ["storage", "notifications", "alarms"],
   "background": {
     "service_worker": "background.js"
