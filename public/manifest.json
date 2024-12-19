@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Reboost - Hydration Tracker & Custom Reminders",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Log and track your water intake or set custom reminders like hydration alerts and eye rest breaks. ✨",
   "action": {
     "default_popup": "index.html",
@@ -18,12 +18,6 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
   "permissions": ["storage", "notifications", "alarms"],
   "background": {
     "service_worker": "background.js"

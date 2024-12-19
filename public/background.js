@@ -1,3 +1,4 @@
+// background.js
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "startTimer") {
     const { title, message, duration } = request.payload;
@@ -5,16 +6,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     return true;
   } else if (request.action === "getTimerStatus") {
     getTimerStatus(sendResponse);
-    return true;
-  } else if (request.action === "updateLastPage") {
-    chrome.storage.local.set(
-      {
-        lastVisitedPage: request.page || "/",
-      },
-      () => {
-        sendResponse({ status: "Page updated", page: request.page || "/" });
-      }
-    );
     return true;
   }
 });
@@ -78,6 +69,7 @@ function getTimerStatus(sendResponse) {
     }
   });
 }
+
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "reminderAlarm") {
     chrome.storage.local.get(["timerData"], (result) => {

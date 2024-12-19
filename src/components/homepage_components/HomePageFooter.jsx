@@ -5,7 +5,7 @@ const HomePageFooter = () => {
     <>
       <div className="text-[10px] font-manrope absolute bottom-0 left-0 bg-transparent px-3 py-2">
         <p className="text-[#4f8296] text-left w-full">
-          © 2024 Developed by{" "}
+          v1.2.0 | © 2024 Developed by{" "}
           <a
             href="https://www.linkedin.com/in/sdverano"
             target="_blank"
