@@ -16,39 +16,41 @@ function App() {
     <div className="flex items-center justify-center w-[300px] h-[500px] bg-[#000000]">
       <div className="flex flex-col items-center justify-center w-[300px] h-[500px] bg-[#000000]">
         <Router>
-          <LastPageRestorer>
+          <NavigationPersistence>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/menu" element={<MenuPage />} />
               <Route path="/hydration-tracker" element={<DrinkPage />} />
               <Route path="/wellness-reminder" element={<WellnessPage />} />
             </Routes>
-          </LastPageRestorer>
+          </NavigationPersistence>
         </Router>
       </div>
     </div>
   );
 }
 
-function LastPageRestorer({ children }) {
+function NavigationPersistence({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    chrome.storage.local.get(["lastVisitedPage"], (result) => {
-      if (
-        result.lastVisitedPage &&
-        result.lastVisitedPage !== "/" &&
-        location.pathname === "/"
-      ) {
-        navigate(result.lastVisitedPage);
+    const checkSavedPath = async () => {
+      const { lastVisitedPage } = await chrome.storage.local.get(
+        "lastVisitedPage"
+      );
+      if (lastVisitedPage && location.pathname === "/") {
+        navigate(lastVisitedPage);
       }
-    });
+    };
+    checkSavedPath();
+  }, []);
 
+  useEffect(() => {
     if (location.pathname !== "/") {
       chrome.storage.local.set({ lastVisitedPage: location.pathname });
     }
-  }, [location.pathname, navigate]);
+  }, [location.pathname]);
 
   return children;
 }
