@@ -1,3 +1,3 @@
-#Reboost
+To be updated this month (March)
 
-"Reboost" is a Google Chrome extension that keeps you active and refreshed with quick reminders to stand, stretch, and hydrate. Boost your well-being and stay on track effortlessly!
+Contribution are always welcome, please feel free to submit a Pull Request. I will add also add a license soon to denote that this is an open source project.
