@@ -94,8 +94,7 @@ npm run build
 
 ### **4. Load the extension in Chrome:**
 
-Open Google Chrome and navigate to
-[chrome://extensions/](**chrome://extensions/**)
+Open Google Chrome and navigate chrome://extensions/
 
 Enable Developer Mode (toggle in the top-right corner)
 
@@ -104,8 +103,6 @@ Click **Load unpacked** and select the **build** folder inside your project
 ---
 
 ## <a name="six"></a>🛠️ Technologies Used
-
-### **Frontend:**
 
 - React
 - React Router
