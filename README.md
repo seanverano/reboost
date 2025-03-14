@@ -70,13 +70,16 @@ Reboost utilizes the following Chrome APIs, which require specific permissions t
 ### **Dual Self-Care Tools in One**
 
 - **Hydration Tracker**: Log water intake and track progress toward daily hydration goals.
+
 <p align="center">
-    <img src="https://i.imgur.com/Nj8gs77.gif" alt="Hydration Tracker GIF" style="width: 40%; height: auto;">
+    <img src="https://i.imgur.com/BITNl1q.gif" alt="Hydration Tracker GIF" style="width: 60%; height: auto;">
 </p>
+
 - **Wellness Reminders**: Set personalized break reminders (Eye Break, Hydration, Posture etc.) with custom notes.
 <p align="center">
-    <img src="https://i.imgur.com/0xT2Y19.gif" alt="Hydration Tracker GIF" style="width: 40%; height: auto;">
+    <img src="https://i.imgur.com/0xT2Y19.gif" alt="Wellness Reminder GIF" style="width: 40%; height: auto;">
 </p>
+
 - **Mini Pop-Up Notifications**: Get non-intrusive alert notification to stay on track without disrupting your workflow.
 - **Persistent Tracking & Insights**: Review daily hydration logs and countdown timers for upcoming breaks.
 
