@@ -1,6 +1,6 @@
 # **Reboost**
 
-Reboost is a Chrome extension with two features: a hydration tracker for logging water intake and a wellness reminder for setting custom break alerts.
+Reboost is a Chrome extension with two features: a hydration tracker for logging water intake and a wellness reminder system for setting custom break alerts.
 
 <p align="center">
     <img src="https://i.imgur.com/Id14fNB.png" alt="Reboost Banner" style="width: 100%; height: auto;">
@@ -24,11 +24,11 @@ Reboost is a Chrome extension with two features: a hydration tracker for logging
 
 ### **Links**
 
-- **Chrome Web Store**: https://chromewebstore.google.com/detail/reboost/bdlffpdkioakgjjpmgpboogfiaegbpgp
-- **Official Site**: https://reboost.fyi/
-- **Chrome Extension Source Code**: https://github.com/seanverano/reboost
-- **Official Site Source Code**: https://github.com/seanverano/reboost-site
-- **Demo Video & Preview**: https://www.youtube.com/watch?v=g8RL_s4DbIY
+- 🔗[**Chrome Web Store**](https://chromewebstore.google.com/detail/reboost/bdlffpdkioakgjjpmgpboogfiaegbpgp)
+- 🔗[**Official Site**](https://reboost.fyi/)
+- 🔗[**Chrome Extension Source Code**](https://github.com/seanverano/reboost)
+- 🔗[**Official Site Source Code**](https://github.com/seanverano/reboost-site)
+- 🔗[**Demo Video & Preview**](https://www.youtube.com/watch?v=g8RL_s4DbIY)
 
 This project was solely developed by me, **Sean Dustin Verano**.
 
@@ -55,13 +55,13 @@ The frontend is built using React + TailwindCSS. Below are the main routes:
 - **`/hydration-tracker`**: Users can log and track their water intake.
 - **`/wellness-reminder`**: Allows users to set custom break reminders.
 
-### **Chrome Extension APIs**
+### Chrome Extension APIs & Required Permissions
 
-Reboost utilizes several Chrome APIs to provide seamless tracking and reminders:
+Reboost utilizes the following Chrome APIs, which require specific permissions to function properly:
 
-- **Alarms API**: Schedules hydration reminders and break alerts in the background. The extension creates an alarm when a timer starts and listens for its completion to trigger notifications.
-- **Storage API**: Stores hydration logs, reminder settings, and user preferences in local storage. This ensures that timers persist even after the extension is closed or the browser is restarted.
-- **Notifications API**: Sends non-intrusive pop-up notifications to remind users of their hydration goals and scheduled breaks. Notifications include interactive buttons for user acknowledgment.
+- **Alarms API (`alarms` permission)**: Schedules hydration reminders and break alerts in the background. The extension creates an alarm when a timer starts and listens for its completion to trigger notifications.
+- **Storage API (`storage` permission)**: Stores hydration logs, reminder settings, and user preferences in local storage. This ensures that timers persist even after the extension is closed or the browser is restarted.
+- **Notifications API (`notifications` permission)**: Sends non-intrusive pop-up notifications to remind users of their hydration goals and scheduled breaks. Notifications include interactive buttons for user acknowledgment.
 
 ---
 
@@ -70,7 +70,13 @@ Reboost utilizes several Chrome APIs to provide seamless tracking and reminders:
 ### **Dual Self-Care Tools in One**
 
 - **Hydration Tracker**: Log water intake and track progress toward daily hydration goals.
-- **Wellness Reminders**: Set personalized break reminders (Eye Break, Hydration, etc.) with custom notes.
+<p align="center">
+    <img src="https://i.imgur.com/Nj8gs77.gif" alt="Hydration Tracker GIF" style="width: 40%; height: auto;">
+</p>
+- **Wellness Reminders**: Set personalized break reminders (Eye Break, Hydration, Posture etc.) with custom notes.
+<p align="center">
+    <img src="https://i.imgur.com/0xT2Y19.gif" alt="Hydration Tracker GIF" style="width: 40%; height: auto;">
+</p>
 - **Mini Pop-Up Notifications**: Get non-intrusive alert notification to stay on track without disrupting your workflow.
 - **Persistent Tracking & Insights**: Review daily hydration logs and countdown timers for upcoming breaks.
 
@@ -105,11 +111,17 @@ npm run build
 
 ### **4. Load the extension in Chrome:**
 
-Open Google Chrome and navigate chrome://extensions/
+1. Open Google Chrome and navigate to `chrome://extensions/`
 
-Enable Developer Mode (toggle in the top-right corner)
+2. Enable **Developer Mode** (toggle in the top-right corner)
 
-Click **Load unpacked** and select the **build** folder inside your project
+3. Click **Load unpacked**
+
+4. Select the **build** folder inside your project
+
+### **Alternative Installation**
+
+If you prefer to install the extension directly, visit [**Reboost - Chrome Web Store**](https://chromewebstore.google.com/detail/reboost-track-water-intak/bdlffpdkioakgjjpmgpboogfiaegbpgp)
 
 ---
 
