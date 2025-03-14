@@ -1,6 +1,6 @@
 # **Reboost**
 
-Reboost is a Chrome extension with 2 core features, a hydration tracker for logging and tracking water intake and also a reminder for setting custom break alerts.
+Reboost is a Chrome extension with two features: a hydration tracker for logging water intake and a wellness reminder for setting custom break alerts.
 
 <p align="center">
     <img src="https://i.imgur.com/Id14fNB.png" alt="Reboost Banner" style="width: 100%; height: auto;">
@@ -12,7 +12,7 @@ Reboost is a Chrome extension with 2 core features, a hydration tracker for logg
 
 - [📋 Project Information](#seven)
 - [❓ The Problem](#one)
-- [🏛️ Technical Architecture](#two)
+- [🏛️ Project Architecture](#two)
 - [🌟 Key Features](#three)
 - [⚙️ Installation & Setup](#five)
 - [🛠️ Technologies Used](#six)
@@ -28,6 +28,7 @@ Reboost is a Chrome extension with 2 core features, a hydration tracker for logg
 - **Official Site**: https://reboost.fyi/
 - **Chrome Extension Source Code**: https://github.com/seanverano/reboost
 - **Official Site Source Code**: https://github.com/seanverano/reboost-site
+- **Demo Video & Preview**: https://www.youtube.com/watch?v=g8RL_s4DbIY
 
 This project was solely developed by me, **Sean Dustin Verano**.
 
@@ -43,27 +44,37 @@ A Chrome extension is more efficient and faster, keeping users focused without s
 
 ---
 
-## <a name="two"></a>🏛️ Technical Architecture
+## <a name="two"></a>🏛️ Project Architecture
 
-### **Frontend (React)**
+### **Frontend Overview**
 
-- **`/`**: Homepage with an overview of the platform and its features, including two buttons, one to get started and another to visit the official website for more details.
-- **`/menu`**: Menu where users can choose between the two features.
-- **`/hydration-tracker`**: Feature 1 Page where users can log and track their water intake.
-- **`/wellness-reminder`**: Feature 2 Page where users can set custom reminders.
+The frontend is built using React + TailwindCSS. Below are the main routes:
+
+- **`/`**: Homepage with an overview and navigation.
+- **`/menu`**: Lets users choose between hydration tracking and reminders.
+- **`/hydration-tracker`**: Users can log and track their water intake.
+- **`/wellness-reminder`**: Allows users to set custom break reminders.
+
+### **Chrome Extension APIs**
+
+Reboost utilizes several Chrome APIs to provide seamless tracking and reminders:
+
+- **Alarms API**: Schedules hydration reminders and break alerts in the background. The extension creates an alarm when a timer starts and listens for its completion to trigger notifications.
+- **Storage API**: Stores hydration logs, reminder settings, and user preferences in local storage. This ensures that timers persist even after the extension is closed or the browser is restarted.
+- **Notifications API**: Sends non-intrusive pop-up notifications to remind users of their hydration goals and scheduled breaks. Notifications include interactive buttons for user acknowledgment.
 
 ---
 
 ## <a name="three"></a>🌟 Key Features
 
-### **Feature 1: Two Self-Care Tools in One**
+### **Dual Self-Care Tools in One**
 
-- **One-Tap Hydration Logging**: Quickly log water intake and track progress toward daily hydration goals.
-- **Custom Wellness Reminders**: Set personalized break reminders (Eye Break, Hydration, etc.) with custom notes.
+- **Hydration Tracker**: Log water intake and track progress toward daily hydration goals.
+- **Wellness Reminders**: Set personalized break reminders (Eye Break, Hydration, etc.) with custom notes.
 - **Mini Pop-Up Notifications**: Get non-intrusive alert notification to stay on track without disrupting your workflow.
 - **Persistent Tracking & Insights**: Review daily hydration logs and countdown timers for upcoming breaks.
 
-### **Feature 2: Free, Lightweight & Privacy-Focused**
+### **Free, Lightweight & Privacy-Focused**
 
 - **Lightweight & Efficient**: Runs smoothly without slowing down your browser.
 - **No Account Required**: Use all features without signing up.
@@ -94,8 +105,7 @@ npm run build
 
 ### **4. Load the extension in Chrome:**
 
-Open Google Chrome and navigate to
-[chrome://extensions/](**chrome://extensions/**)
+Open Google Chrome and navigate chrome://extensions/
 
 Enable Developer Mode (toggle in the top-right corner)
 
@@ -104,8 +114,6 @@ Click **Load unpacked** and select the **build** folder inside your project
 ---
 
 ## <a name="six"></a>🛠️ Technologies Used
-
-### **Frontend:**
 
 - React
 - React Router

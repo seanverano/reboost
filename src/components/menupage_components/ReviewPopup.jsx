@@ -25,12 +25,6 @@ const ReviewPopup = ({ onClose, onReview }) => {
             Done! 🚀
           </button>
         </div>
-        <button
-          onClick={onClose}
-          className="text-xs font-bold bg-gray-200 text-gray-700 px-2 py-2 mt-2 rounded-lg hover:bg-transparent hover:text-gray-700 transition-colors duration-300"
-        >
-          I haven't tried it yet.
-        </button>
       </div>
     </div>
   );

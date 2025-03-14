@@ -18,10 +18,17 @@ const MenuPage = () => {
     const checkPopupDisplay = () => {
       const lastShown = localStorage.getItem("reboostReviewPopupLastShown");
       const currentTime = new Date().getTime();
+      const isFirstTime = localStorage.getItem("reboostFirstTimeUser") === null;
 
-      if (
+      if (isFirstTime) {
+        localStorage.setItem("reboostFirstTimeUser", "false");
+        localStorage.setItem(
+          "reboostReviewPopupLastShown",
+          currentTime.toString()
+        );
+      } else if (
         !lastShown ||
-        currentTime - parseInt(lastShown) > 7 * 24 * 60 * 60 * 1000
+        currentTime - parseInt(lastShown) > 20 * 24 * 60 * 60 * 1000
       ) {
         setShowPopup(true);
         localStorage.setItem(

@@ -16,7 +16,7 @@ const HomePageFooter = () => {
             SDV
           </a>{" "}
         </p>
-        <span className="text-[#4f8296]">v1.2.5 © 2024-2025</span>
+        <span className="text-[#4f8296]">v1.2.6 © 2024-2025</span>
       </div>
       <div className="px-3 py-2 flex absolute top-0 right-0 text-[10px] z-10 gap-2 ">
         <a

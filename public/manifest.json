@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Reboost - Track Water Intake and Set Reminders",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Track your water intake and set custom reminders. Stay hydrated, stay on track, and never miss a break! ✨",
   "action": {
     "default_popup": "index.html",
