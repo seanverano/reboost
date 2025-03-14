@@ -16,6 +16,7 @@ Reboost is a Chrome extension with two features: a hydration tracker for logging
 - [🌟 Key Features](#three)
 - [⚙️ Installation & Setup](#five)
 - [🛠️ Technologies Used](#six)
+- [📜 Changelog](#eight)
 - [🤝 Contributing](#four)
 
 ---
@@ -135,6 +136,12 @@ If you prefer to install the extension directly, visit [**Reboost - Chrome Web S
 - Tailwind CSS
 - React Icons
 - Chrome Extension APIs (Alarms, Storage, and Notifications)
+
+---
+
+## <a name="eight"></a>📜 Changelog
+
+See the latest updates and improvements of this project in the [**Changelog**](https://github.com/seanverano/reboost/blob/main/CHANGELOG.md).
 
 ---
 
